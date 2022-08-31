@@ -4,10 +4,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import org.junit.platform.commons.util.StringUtils;
-
 import classes.Client;
-import classes.Mutuelle;
 
 import static main.App.*;
 import utilitaires.ClientTableModel;
