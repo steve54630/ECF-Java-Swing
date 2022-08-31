@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?PowerDesigner signature="Workspace" version="15.1.0.2850"?>
+<!-- Veuillez ne pas modifier ce fichier -->
+
+<Workspace>
+	<Local Expanded="Yes">
+<<<<<<< HEAD
+		<Model Expanded="Yes" ID="{DB836D5E-CA2C-486D-A4A9-2121FC488D2F}" Loaded="No" Name="Diagramme de classes_2" Type="{18112060-1A4B-11D1-83D9-444553540000}" URL="Modéle UML.moo"/>
+=======
+>>>>>>> master
+		<Model Expanded="Yes" ID="{DB836D5E-CA2C-486D-A4A9-2121FC488D2F}" Name="Diagramme de classes_2" Selected="Yes" Type="{18112060-1A4B-11D1-83D9-444553540000}" URL="Modéle UML.moo"/>
+	</Local>
+	<BrowserModule Name="Référentiel"/>
+</Workspace>

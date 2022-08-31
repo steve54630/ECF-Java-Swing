@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmi:id="_kkgsMBeLEd60N8ipLbB6nA" name="Diagramme de classes_2">
+  <packagedElement xmi:type="uml:Association" xmi:id="_pWHZwB1hEe2Rc4KneikUNg" name="association1" memberEnd="_pWWqUB1hEe2Rc4KneikUNg _pXsHEB1hEe2Rc4KneikUNg" navigableOwnedEnd="_pXsHEB1hEe2Rc4KneikUNg">
+    <ownedEnd xmi:id="_pWWqUB1hEe2Rc4KneikUNg" name="" visibility="public" type="_pdUN8B1hEe2Rc4KneikUNg" association="_pWHZwB1hEe2Rc4KneikUNg">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_pXlZYB1hEe2Rc4KneikUNg" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_pXi9IB1hEe2Rc4KneikUNg"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_pXsHEB1hEe2Rc4KneikUNg" name="" visibility="public" type="_pfRVwB1hEe2Rc4KneikUNg" association="_pWHZwB1hEe2Rc4KneikUNg">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_pX2fIB1hEe2Rc4KneikUNg" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_pX1RAB1hEe2Rc4KneikUNg"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_pX4UUB1hEe2Rc4KneikUNg" name="association3" memberEnd="_pX47YB1hEe2Rc4KneikUNg _pX7XoB1hEe2Rc4KneikUNg" navigableOwnedEnd="_pX47YB1hEe2Rc4KneikUNg _pX7XoB1hEe2Rc4KneikUNg">
+    <ownedEnd xmi:id="_pX47YB1hEe2Rc4KneikUNg" name="" visibility="public" type="_pdUN8B1hEe2Rc4KneikUNg" association="_pX4UUB1hEe2Rc4KneikUNg">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_pX6JgR1hEe2Rc4KneikUNg" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_pX6JgB1hEe2Rc4KneikUNg"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_pX7XoB1hEe2Rc4KneikUNg" name="" visibility="public" type="_peNl0B1hEe2Rc4KneikUNg" association="_pX4UUB1hEe2Rc4KneikUNg">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_pX9M0R1hEe2Rc4KneikUNg" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_pX9M0B1hEe2Rc4KneikUNg"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_pX-a8B1hEe2Rc4KneikUNg" name="association4" memberEnd="_pX-a8R1hEe2Rc4KneikUNg _pYCFUB1hEe2Rc4KneikUNg" navigableOwnedEnd="_pYCFUB1hEe2Rc4KneikUNg">
+    <ownedEnd xmi:id="_pX-a8R1hEe2Rc4KneikUNg" name="" visibility="public" type="_piELEB1hEe2Rc4KneikUNg" association="_pX-a8B1hEe2Rc4KneikUNg">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_pYAQIR1hEe2Rc4KneikUNg" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_pYAQIB1hEe2Rc4KneikUNg"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_pYCFUB1hEe2Rc4KneikUNg" name="" visibility="public" type="_pdUN8B1hEe2Rc4KneikUNg" association="_pX-a8B1hEe2Rc4KneikUNg">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_pYCsYR1hEe2Rc4KneikUNg" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_pYCsYB1hEe2Rc4KneikUNg"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_pYD6gB1hEe2Rc4KneikUNg" name="association5" memberEnd="_pYD6gR1hEe2Rc4KneikUNg _pYGWwB1hEe2Rc4KneikUNg" navigableOwnedEnd="_pYGWwB1hEe2Rc4KneikUNg">
+    <ownedEnd xmi:id="_pYD6gR1hEe2Rc4KneikUNg" name="" visibility="public" type="_piELEB1hEe2Rc4KneikUNg" association="_pYD6gB1hEe2Rc4KneikUNg">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_pYEhkR1hEe2Rc4KneikUNg" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_pYEhkB1hEe2Rc4KneikUNg"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_pYGWwB1hEe2Rc4KneikUNg" name="" visibility="public" type="_peNl0B1hEe2Rc4KneikUNg" association="_pYD6gB1hEe2Rc4KneikUNg">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_pYG90R1hEe2Rc4KneikUNg" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_pYG90B1hEe2Rc4KneikUNg"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_pYHk4B1hEe2Rc4KneikUNg" name="association6" memberEnd="_pYIL8B1hEe2Rc4KneikUNg _pYLPQB1hEe2Rc4KneikUNg" navigableOwnedEnd="_pYLPQB1hEe2Rc4KneikUNg">
+    <ownedEnd xmi:id="_pYIL8B1hEe2Rc4KneikUNg" name="" visibility="public" type="_pdUN8B1hEe2Rc4KneikUNg" association="_pYHk4B1hEe2Rc4KneikUNg">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_pYIzAR1hEe2Rc4KneikUNg" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_pYIzAB1hEe2Rc4KneikUNg"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_pYLPQB1hEe2Rc4KneikUNg" name="" visibility="public" type="_pf1WcB1hEe2Rc4KneikUNg" association="_pYHk4B1hEe2Rc4KneikUNg">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_pYNrgB1hEe2Rc4KneikUNg" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_pYNEcB1hEe2Rc4KneikUNg"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_pYOSkB1hEe2Rc4KneikUNg" name="association7" memberEnd="_pYO5oB1hEe2Rc4KneikUNg _pYRV4B1hEe2Rc4KneikUNg" navigableOwnedEnd="_pYRV4B1hEe2Rc4KneikUNg">
+    <ownedEnd xmi:id="_pYO5oB1hEe2Rc4KneikUNg" name="" visibility="public" type="_piELEB1hEe2Rc4KneikUNg" association="_pYOSkB1hEe2Rc4KneikUNg">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_pYPgsR1hEe2Rc4KneikUNg" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_pYPgsB1hEe2Rc4KneikUNg"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_pYRV4B1hEe2Rc4KneikUNg" name="" visibility="public" type="_pf1WcB1hEe2Rc4KneikUNg" association="_pYOSkB1hEe2Rc4KneikUNg">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_pYR88R1hEe2Rc4KneikUNg" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_pYR88B1hEe2Rc4KneikUNg"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_pYTLEB1hEe2Rc4KneikUNg" name="association8" memberEnd="_pYTLER1hEe2Rc4KneikUNg _pYWOYB1hEe2Rc4KneikUNg" navigableOwnedEnd="_pYTLER1hEe2Rc4KneikUNg _pYWOYB1hEe2Rc4KneikUNg">
+    <ownedEnd xmi:id="_pYTLER1hEe2Rc4KneikUNg" name="" visibility="public" type="_pdUN8B1hEe2Rc4KneikUNg" association="_pYTLEB1hEe2Rc4KneikUNg">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_pYUZMB1hEe2Rc4KneikUNg" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_pYTyIB1hEe2Rc4KneikUNg"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_pYWOYB1hEe2Rc4KneikUNg" name="" visibility="public" type="_phSvAB1hEe2Rc4KneikUNg" association="_pYTLEB1hEe2Rc4KneikUNg">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_pYYDkR1hEe2Rc4KneikUNg" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_pYYDkB1hEe2Rc4KneikUNg"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_pYYqoB1hEe2Rc4KneikUNg" name="association9" memberEnd="_pYZRsB1hEe2Rc4KneikUNg _pYc8EB1hEe2Rc4KneikUNg" navigableOwnedEnd="_pYZRsB1hEe2Rc4KneikUNg _pYc8EB1hEe2Rc4KneikUNg">
+    <ownedEnd xmi:id="_pYZRsB1hEe2Rc4KneikUNg" name="" visibility="public" type="_pgrD8B1hEe2Rc4KneikUNg" association="_pYYqoB1hEe2Rc4KneikUNg">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_pYbG4R1hEe2Rc4KneikUNg" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_pYbG4B1hEe2Rc4KneikUNg"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_pYc8EB1hEe2Rc4KneikUNg" name="" visibility="public" type="_pdUN8B1hEe2Rc4KneikUNg" association="_pYYqoB1hEe2Rc4KneikUNg">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_pYdjIR1hEe2Rc4KneikUNg" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_pYdjIB1hEe2Rc4KneikUNg"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_pYfYUB1hEe2Rc4KneikUNg" name="association10" memberEnd="_pYf_YB1hEe2Rc4KneikUNg _pYiboB1hEe2Rc4KneikUNg" navigableOwnedEnd="_pYiboB1hEe2Rc4KneikUNg">
+    <ownedEnd xmi:id="_pYf_YB1hEe2Rc4KneikUNg" name="" visibility="public" type="_piELEB1hEe2Rc4KneikUNg" association="_pYfYUB1hEe2Rc4KneikUNg">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_pYgmcR1hEe2Rc4KneikUNg" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_pYgmcB1hEe2Rc4KneikUNg"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_pYiboB1hEe2Rc4KneikUNg" name="" visibility="public" type="_phSvAB1hEe2Rc4KneikUNg" association="_pYfYUB1hEe2Rc4KneikUNg">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_pYjCsR1hEe2Rc4KneikUNg" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_pYjCsB1hEe2Rc4KneikUNg"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_pYmGAB1hEe2Rc4KneikUNg" name="association11" memberEnd="_pYmGAR1hEe2Rc4KneikUNg _pYpwYB1hEe2Rc4KneikUNg" navigableOwnedEnd="_pYpwYB1hEe2Rc4KneikUNg">
+    <ownedEnd xmi:id="_pYmGAR1hEe2Rc4KneikUNg" name="" visibility="public" type="_pgrD8B1hEe2Rc4KneikUNg" association="_pYmGAB1hEe2Rc4KneikUNg">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_pYnUIR1hEe2Rc4KneikUNg" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_pYnUIB1hEe2Rc4KneikUNg"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_pYpwYB1hEe2Rc4KneikUNg" name="" visibility="public" type="_piELEB1hEe2Rc4KneikUNg" association="_pYmGAB1hEe2Rc4KneikUNg">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_pYq-gR1hEe2Rc4KneikUNg" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_pYq-gB1hEe2Rc4KneikUNg"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_pYrlkB1hEe2Rc4KneikUNg" name="association12" memberEnd="_pYsMoB1hEe2Rc4KneikUNg _pYvP8B1hEe2Rc4KneikUNg" navigableOwnedEnd="_pYsMoB1hEe2Rc4KneikUNg _pYvP8B1hEe2Rc4KneikUNg">
+    <ownedEnd xmi:id="_pYsMoB1hEe2Rc4KneikUNg" name="" visibility="public" type="_pgrD8B1hEe2Rc4KneikUNg" association="_pYrlkB1hEe2Rc4KneikUNg">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_pYszsR1hEe2Rc4KneikUNg" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_pYszsB1hEe2Rc4KneikUNg"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_pYvP8B1hEe2Rc4KneikUNg" name="" visibility="public" type="_peNl0B1hEe2Rc4KneikUNg" association="_pYrlkB1hEe2Rc4KneikUNg">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_pYv3AB1hEe2Rc4KneikUNg" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_pYvP8R1hEe2Rc4KneikUNg"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_pYweEB1hEe2Rc4KneikUNg" name="association14" memberEnd="_pYxFIB1hEe2Rc4KneikUNg _pYzhYB1hEe2Rc4KneikUNg" navigableOwnedEnd="_pYzhYB1hEe2Rc4KneikUNg">
+    <ownedEnd xmi:id="_pYxFIB1hEe2Rc4KneikUNg" name="" visibility="public" type="_pf1WcB1hEe2Rc4KneikUNg" association="_pYweEB1hEe2Rc4KneikUNg">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_pYxsMR1hEe2Rc4KneikUNg" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_pYxsMB1hEe2Rc4KneikUNg" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_pYzhYB1hEe2Rc4KneikUNg" name="" visibility="public" type="_piu5cB1hEe2Rc4KneikUNg" association="_pYweEB1hEe2Rc4KneikUNg">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_pY1WkR1hEe2Rc4KneikUNg" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_pY1WkB1hEe2Rc4KneikUNg" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_pY3LwB1hEe2Rc4KneikUNg" name="association15" memberEnd="_pY3LwR1hEe2Rc4KneikUNg _pY7dMB1hEe2Rc4KneikUNg" navigableOwnedEnd="_pY7dMB1hEe2Rc4KneikUNg">
+    <ownedEnd xmi:id="_pY3LwR1hEe2Rc4KneikUNg" name="" visibility="public" type="_pb54sB1hEe2Rc4KneikUNg" association="_pY3LwB1hEe2Rc4KneikUNg">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_pY5A8R1hEe2Rc4KneikUNg" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_pY5A8B1hEe2Rc4KneikUNg" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_pY7dMB1hEe2Rc4KneikUNg" name="" visibility="public" type="_piu5cB1hEe2Rc4KneikUNg" association="_pY3LwB1hEe2Rc4KneikUNg">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_pY8EQR1hEe2Rc4KneikUNg" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_pY8EQB1hEe2Rc4KneikUNg"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_pY8rUB1hEe2Rc4KneikUNg" name="association16" memberEnd="_pY9SYB1hEe2Rc4KneikUNg _pY_uoB1hEe2Rc4KneikUNg" navigableOwnedEnd="_pY_uoB1hEe2Rc4KneikUNg">
+    <ownedEnd xmi:id="_pY9SYB1hEe2Rc4KneikUNg" name="" visibility="public" type="_pfRVwB1hEe2Rc4KneikUNg" association="_pY8rUB1hEe2Rc4KneikUNg">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_pY95cR1hEe2Rc4KneikUNg" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_pY95cB1hEe2Rc4KneikUNg" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_pY_uoB1hEe2Rc4KneikUNg" name="" visibility="public" type="_paAbQB1hEe2Rc4KneikUNg" association="_pY8rUB1hEe2Rc4KneikUNg">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_pZBj0R1hEe2Rc4KneikUNg" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_pZBj0B1hEe2Rc4KneikUNg"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_pZCx8B1hEe2Rc4KneikUNg" name="association18" memberEnd="_pZCx8R1hEe2Rc4KneikUNg _pZF1QB1hEe2Rc4KneikUNg" navigableOwnedEnd="_pZF1QB1hEe2Rc4KneikUNg">
+    <ownedEnd xmi:id="_pZCx8R1hEe2Rc4KneikUNg" name="" visibility="public" type="_phSvAB1hEe2Rc4KneikUNg" association="_pZCx8B1hEe2Rc4KneikUNg">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_pZDZAR1hEe2Rc4KneikUNg" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_pZDZAB1hEe2Rc4KneikUNg"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_pZF1QB1hEe2Rc4KneikUNg" name="" visibility="public" type="_pja18B1hEe2Rc4KneikUNg" association="_pZCx8B1hEe2Rc4KneikUNg">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_pZHqcB1hEe2Rc4KneikUNg" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_pZHDYB1hEe2Rc4KneikUNg"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Enumeration" xmi:id="_paAbQB1hEe2Rc4KneikUNg" name="Specialite">
+    <ownedLiteral xmi:id="_pbRmkB1hEe2Rc4KneikUNg" name="gastroEnterologie" visibility="private"/>
+    <ownedLiteral xmi:id="_pbWfEB1hEe2Rc4KneikUNg" name="cardiologie" visibility="private"/>
+    <ownedLiteral xmi:id="_pbY7UB1hEe2Rc4KneikUNg" name="attribut3" visibility="private"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_pb54sB1hEe2Rc4KneikUNg" name="Personne" isAbstract="true">
+    <ownedAttribute xmi:id="_pcMzoB1hEe2Rc4KneikUNg" name="nom" visibility="private" type="_pcRFEB1hEe2Rc4KneikUNg"/>
+    <ownedAttribute xmi:id="_pcWkoB1hEe2Rc4KneikUNg" name="prenom" visibility="private" type="_pcRFEB1hEe2Rc4KneikUNg"/>
+    <ownedAttribute xmi:id="_pcaPAB1hEe2Rc4KneikUNg" name="adresse" visibility="private" type="_pca2EB1hEe2Rc4KneikUNg"/>
+    <ownedAttribute xmi:id="_pcdSUB1hEe2Rc4KneikUNg" name="telephone" visibility="private" type="_pcRFEB1hEe2Rc4KneikUNg"/>
+    <ownedAttribute xmi:id="_pcg8sB1hEe2Rc4KneikUNg" name="email" visibility="private" type="_pcRFEB1hEe2Rc4KneikUNg"/>
+    <ownedOperation xmi:id="_pcwNQB1hEe2Rc4KneikUNg" name="toString" visibility="public" isAbstract="true" bodyCondition="_pc4wIB1hEe2Rc4KneikUNg">
+      <ownedRule xmi:id="_pc4wIB1hEe2Rc4KneikUNg">
+        <specification xmi:type="uml:LiteralString" xmi:id="_pc7MYB1hEe2Rc4KneikUNg" name="TemplateBody" value="%DefaultBody%"/>
+      </ownedRule>
+      <ownedParameter xmi:id="_pdJ14B1hEe2Rc4KneikUNg" name="toString" type="_pcRFEB1hEe2Rc4KneikUNg" direction="return"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_pcRFEB1hEe2Rc4KneikUNg" name="String"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_pca2EB1hEe2Rc4KneikUNg" name="Adresse"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_pdUN8B1hEe2Rc4KneikUNg" name="Client">
+    <generalization xmi:id="_pda7oB1hEe2Rc4KneikUNg" general="_pb54sB1hEe2Rc4KneikUNg">
+      <ownedComment xmi:id="_pddX4B1hEe2Rc4KneikUNg">
+        <body>Client étend Personne</body>
+      </ownedComment>
+    </generalization>
+    <ownedAttribute xmi:id="_pdtPgB1hEe2Rc4KneikUNg" name="dateDeNaissance" visibility="private" type="_pdt2kB1hEe2Rc4KneikUNg"/>
+    <ownedAttribute xmi:id="_pdw54B1hEe2Rc4KneikUNg" name="mutuelle" visibility="private" type="_pdxg8B1hEe2Rc4KneikUNg"/>
+    <ownedAttribute xmi:id="_pdz9MB1hEe2Rc4KneikUNg" name="medecinTraitant" visibility="private" type="_pd1LUB1hEe2Rc4KneikUNg"/>
+    <ownedAttribute xmi:id="_pd3nkB1hEe2Rc4KneikUNg" name="specialiste" visibility="private" type="_pd41sB1hEe2Rc4KneikUNg"/>
+    <ownedOperation xmi:id="_peEb4B1hEe2Rc4KneikUNg" name="toString" visibility="public" bodyCondition="_peFqAB1hEe2Rc4KneikUNg">
+      <ownedRule xmi:id="_peFqAB1hEe2Rc4KneikUNg">
+        <specification xmi:type="uml:LiteralString" xmi:id="_peFqAR1hEe2Rc4KneikUNg" name="TemplateBody" value="%DefaultBody%"/>
+      </ownedRule>
+      <ownedParameter xmi:id="_peHfMB1hEe2Rc4KneikUNg" name="toString" type="_pcRFEB1hEe2Rc4KneikUNg" direction="return"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_pdt2kB1hEe2Rc4KneikUNg" name="GregorianCalendar"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_pdxg8B1hEe2Rc4KneikUNg" name="Mutuelle"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_pd1LUB1hEe2Rc4KneikUNg" name="Médecin"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_pd41sB1hEe2Rc4KneikUNg" name="Specialiste"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_peNl0B1hEe2Rc4KneikUNg" name="Medecin">
+    <generalization xmi:id="_peTFYB1hEe2Rc4KneikUNg" general="_pb54sB1hEe2Rc4KneikUNg">
+      <ownedComment xmi:id="_peTscB1hEe2Rc4KneikUNg">
+        <body>Medecin étend Personne</body>
+      </ownedComment>
+    </generalization>
+    <ownedAttribute xmi:id="_peddcB1hEe2Rc4KneikUNg" name="numeroAggrement" visibility="private" type="_peeEgB1hEe2Rc4KneikUNg"/>
+    <ownedAttribute xmi:id="_pehH0B1hEe2Rc4KneikUNg" name="patients" visibility="private" type="_pehu4B1hEe2Rc4KneikUNg"/>
+    <ownedAttribute xmi:id="_pekLIB1hEe2Rc4KneikUNg" name="ordonnances" visibility="private" type="_pelZQB1hEe2Rc4KneikUNg"/>
+    <ownedOperation xmi:id="_pe0CwB1hEe2Rc4KneikUNg" name="getListeOrdonnances" visibility="public" bodyCondition="_pe3GEB1hEe2Rc4KneikUNg">
+      <ownedRule xmi:id="_pe3GEB1hEe2Rc4KneikUNg">
+        <specification xmi:type="uml:LiteralString" xmi:id="_pe3GER1hEe2Rc4KneikUNg" name="TemplateBody" value="%DefaultBody%"/>
+      </ownedRule>
+      <ownedParameter xmi:id="_pe5iUB1hEe2Rc4KneikUNg" name="getListeOrdonnances" type="_pe6JYB1hEe2Rc4KneikUNg" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_pe6wcB1hEe2Rc4KneikUNg" name="addOrdonnance" visibility="public" bodyCondition="_pe9MsB1hEe2Rc4KneikUNg">
+      <ownedRule xmi:id="_pe9MsB1hEe2Rc4KneikUNg">
+        <specification xmi:type="uml:LiteralString" xmi:id="_pe9zwB1hEe2Rc4KneikUNg" name="TemplateBody" value="%DefaultBody%"/>
+      </ownedRule>
+      <ownedParameter xmi:id="_pfCsQB1hEe2Rc4KneikUNg" name="ordonnance" type="_pfGWoB1hEe2Rc4KneikUNg" direction="inout"/>
+      <ownedParameter xmi:id="_pfGWoR1hEe2Rc4KneikUNg" name="addOrdonnance" type="_pe6JYB1hEe2Rc4KneikUNg" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_pfHkwB1hEe2Rc4KneikUNg" name="toString" visibility="public" bodyCondition="_pfJZ8B1hEe2Rc4KneikUNg">
+      <ownedRule xmi:id="_pfJZ8B1hEe2Rc4KneikUNg">
+        <specification xmi:type="uml:LiteralString" xmi:id="_pfJZ8R1hEe2Rc4KneikUNg" name="TemplateBody" value="%DefaultBody%"/>
+      </ownedRule>
+      <ownedParameter xmi:id="_pfLPIB1hEe2Rc4KneikUNg" name="toString" type="_pcRFEB1hEe2Rc4KneikUNg" direction="return"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_peeEgB1hEe2Rc4KneikUNg" name="int"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_pehu4B1hEe2Rc4KneikUNg" name="ArrayList&lt;Client>"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_pelZQB1hEe2Rc4KneikUNg" name="ArrayList&lt;Ordonnances>"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_pe6JYB1hEe2Rc4KneikUNg" name="void"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_pfGWoB1hEe2Rc4KneikUNg" name="Ordonnance"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_pfRVwB1hEe2Rc4KneikUNg" name="Specialiste">
+    <generalization xmi:id="_pfWOQB1hEe2Rc4KneikUNg" general="_pb54sB1hEe2Rc4KneikUNg">
+      <ownedComment xmi:id="_pfW1UB1hEe2Rc4KneikUNg">
+        <body>Specialiste étend Personne</body>
+      </ownedComment>
+    </generalization>
+    <ownedAttribute xmi:id="_pfeKEB1hEe2Rc4KneikUNg" name="specialite" visibility="private" type="_pffYMB1hEe2Rc4KneikUNg"/>
+    <ownedOperation xmi:id="_pfsMgB1hEe2Rc4KneikUNg" name="toString" visibility="public" bodyCondition="_pftaoB1hEe2Rc4KneikUNg">
+      <ownedRule xmi:id="_pftaoB1hEe2Rc4KneikUNg">
+        <specification xmi:type="uml:LiteralString" xmi:id="_pfuBsB1hEe2Rc4KneikUNg" name="TemplateBody" value="%DefaultBody%"/>
+      </ownedRule>
+      <ownedParameter xmi:id="_pfv24B1hEe2Rc4KneikUNg" name="toString" type="_pcRFEB1hEe2Rc4KneikUNg" direction="return"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_pffYMB1hEe2Rc4KneikUNg" name="Specialite"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_pf1WcB1hEe2Rc4KneikUNg" name="Mutuelle">
+    <ownedAttribute xmi:id="_pgGcMB1hEe2Rc4KneikUNg" name="nom" visibility="private" type="_pcRFEB1hEe2Rc4KneikUNg"/>
+    <ownedAttribute xmi:id="_pgIRYB1hEe2Rc4KneikUNg" name="adresse" visibility="private" type="_pca2EB1hEe2Rc4KneikUNg"/>
+    <ownedAttribute xmi:id="_pgKGkB1hEe2Rc4KneikUNg" name="telephone" visibility="private" type="_pcRFEB1hEe2Rc4KneikUNg"/>
+    <ownedAttribute xmi:id="_pgL7wB1hEe2Rc4KneikUNg" name="email" visibility="private" type="_pcRFEB1hEe2Rc4KneikUNg"/>
+    <ownedAttribute xmi:id="_pgNw8B1hEe2Rc4KneikUNg" name="departement" visibility="private" type="_peeEgB1hEe2Rc4KneikUNg"/>
+    <ownedAttribute xmi:id="_pgRbUB1hEe2Rc4KneikUNg" name="remboursement" visibility="private" type="_peeEgB1hEe2Rc4KneikUNg"/>
+    <ownedAttribute xmi:id="_pgVFsB1hEe2Rc4KneikUNg" name="clients" visibility="private" type="_pehu4B1hEe2Rc4KneikUNg"/>
+    <ownedOperation xmi:id="_pgh6AB1hEe2Rc4KneikUNg" name="toString" visibility="public" bodyCondition="_pgjIIB1hEe2Rc4KneikUNg">
+      <ownedRule xmi:id="_pgjIIB1hEe2Rc4KneikUNg">
+        <specification xmi:type="uml:LiteralString" xmi:id="_pgjvMB1hEe2Rc4KneikUNg" name="TemplateBody" value="%DefaultBody%"/>
+      </ownedRule>
+      <ownedParameter xmi:id="_pglkYB1hEe2Rc4KneikUNg" name="toString" type="_pcRFEB1hEe2Rc4KneikUNg" direction="return"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_pgrD8B1hEe2Rc4KneikUNg" name="Ordonnance">
+    <generalization xmi:id="_pgv8cB1hEe2Rc4KneikUNg" general="_phSvAB1hEe2Rc4KneikUNg"/>
+    <ownedAttribute xmi:id="_pg4fUB1hEe2Rc4KneikUNg" name="medecin" visibility="private" type="_peNl0B1hEe2Rc4KneikUNg"/>
+    <ownedAttribute xmi:id="_pg8wwB1hEe2Rc4KneikUNg" name="specialiste" visibility="private" type="_pfRVwB1hEe2Rc4KneikUNg"/>
+    <ownedOperation xmi:id="_phKMIB1hEe2Rc4KneikUNg" name="toString" visibility="public" bodyCondition="_phLaQB1hEe2Rc4KneikUNg">
+      <ownedRule xmi:id="_phLaQB1hEe2Rc4KneikUNg">
+        <specification xmi:type="uml:LiteralString" xmi:id="_phLaQR1hEe2Rc4KneikUNg" name="TemplateBody" value="%DefaultBody%"/>
+      </ownedRule>
+      <ownedParameter xmi:id="_phNPcB1hEe2Rc4KneikUNg" name="toString" type="_pcRFEB1hEe2Rc4KneikUNg" direction="return"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_phSvAB1hEe2Rc4KneikUNg" name="Achat">
+    <ownedAttribute xmi:id="_phe8QB1hEe2Rc4KneikUNg" name="client" visibility="private" type="_pdUN8B1hEe2Rc4KneikUNg"/>
+    <ownedAttribute xmi:id="_phimoB1hEe2Rc4KneikUNg" name="medicaments" visibility="private" type="_phjNsB1hEe2Rc4KneikUNg"/>
+    <ownedAttribute xmi:id="_phlp8B1hEe2Rc4KneikUNg" name="date" visibility="private" type="_phm4EB1hEe2Rc4KneikUNg"/>
+    <ownedOperation xmi:id="_ph0TcB1hEe2Rc4KneikUNg" name="toString" visibility="public" bodyCondition="_ph1hkB1hEe2Rc4KneikUNg">
+      <ownedRule xmi:id="_ph1hkB1hEe2Rc4KneikUNg">
+        <specification xmi:type="uml:LiteralString" xmi:id="_ph2IoB1hEe2Rc4KneikUNg" name="TemplateBody" value="%DefaultBody%"/>
+      </ownedRule>
+      <ownedParameter xmi:id="_ph390B1hEe2Rc4KneikUNg" name="toString" type="_pcRFEB1hEe2Rc4KneikUNg" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_ph5zAB1hEe2Rc4KneikUNg" name="afficher" visibility="public" bodyCondition="_ph8PQB1hEe2Rc4KneikUNg">
+      <ownedRule xmi:id="_ph8PQB1hEe2Rc4KneikUNg">
+        <specification xmi:type="uml:LiteralString" xmi:id="_ph8PQR1hEe2Rc4KneikUNg" name="TemplateBody" value="%DefaultBody%"/>
+      </ownedRule>
+      <ownedParameter xmi:id="_ph-EcB1hEe2Rc4KneikUNg" name="afficher" type="_pe6JYB1hEe2Rc4KneikUNg" direction="return"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_phjNsB1hEe2Rc4KneikUNg" name="ArrayList&lt;Medicament>"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_phm4EB1hEe2Rc4KneikUNg" name="Instant"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_piELEB1hEe2Rc4KneikUNg" name="Pharmacie">
+    <ownedAttribute xmi:id="_piSNgB1hEe2Rc4KneikUNg" name="clients" visibility="private" type="_pehu4B1hEe2Rc4KneikUNg"/>
+    <ownedAttribute xmi:id="_piV34B1hEe2Rc4KneikUNg" name="medecins" visibility="private" type="_piWe8B1hEe2Rc4KneikUNg"/>
+    <ownedAttribute xmi:id="_piY7MB1hEe2Rc4KneikUNg" name="medicaments" visibility="private" type="_piaJUB1hEe2Rc4KneikUNg"/>
+    <ownedAttribute xmi:id="_pibXcB1hEe2Rc4KneikUNg" name="achats" visibility="private" type="_pib-gB1hEe2Rc4KneikUNg"/>
+    <ownedAttribute xmi:id="_pieawB1hEe2Rc4KneikUNg" name="ordonnances" visibility="private" type="_pelZQB1hEe2Rc4KneikUNg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_piWe8B1hEe2Rc4KneikUNg" name="ArrayList&lt;Medecin>"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_piaJUB1hEe2Rc4KneikUNg" name="ArrayList&lt;Médicament>"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_pib-gB1hEe2Rc4KneikUNg" name="ArrayList&lt;Achat>"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_piu5cB1hEe2Rc4KneikUNg" name="Adresse">
+    <ownedAttribute xmi:id="_pi7twB1hEe2Rc4KneikUNg" name="numero" visibility="private" type="_peeEgB1hEe2Rc4KneikUNg"/>
+    <ownedAttribute xmi:id="_pi_YIB1hEe2Rc4KneikUNg" name="rue" visibility="private" type="_pcRFEB1hEe2Rc4KneikUNg"/>
+    <ownedAttribute xmi:id="_pjCbcB1hEe2Rc4KneikUNg" name="codePostal" visibility="private" type="_peeEgB1hEe2Rc4KneikUNg"/>
+    <ownedAttribute xmi:id="_pjFewB1hEe2Rc4KneikUNg" name="ville" visibility="private" type="_pcRFEB1hEe2Rc4KneikUNg"/>
+    <ownedOperation xmi:id="_pjRsAB1hEe2Rc4KneikUNg" name="toString" visibility="public" bodyCondition="_pjS6IB1hEe2Rc4KneikUNg">
+      <ownedRule xmi:id="_pjS6IB1hEe2Rc4KneikUNg">
+        <specification xmi:type="uml:LiteralString" xmi:id="_pjThMB1hEe2Rc4KneikUNg" name="TemplateBody" value="%DefaultBody%"/>
+      </ownedRule>
+      <ownedParameter xmi:id="_pjUvUB1hEe2Rc4KneikUNg" name="toString" type="_pcRFEB1hEe2Rc4KneikUNg" direction="return"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_pja18B1hEe2Rc4KneikUNg" name="Medicament">
+    <ownedAttribute xmi:id="_pjpfcB1hEe2Rc4KneikUNg" name="nom" visibility="private" type="_pcRFEB1hEe2Rc4KneikUNg"/>
+    <ownedAttribute xmi:id="_pjr7sB1hEe2Rc4KneikUNg" name="categorie" visibility="private" type="_pcRFEB1hEe2Rc4KneikUNg"/>
+    <ownedAttribute xmi:id="_pju_AB1hEe2Rc4KneikUNg" name="prix" visibility="private" type="_peeEgB1hEe2Rc4KneikUNg"/>
+    <ownedAttribute xmi:id="_pjypYB1hEe2Rc4KneikUNg" name="dateCirculation" visibility="private" type="_pjzQcB1hEe2Rc4KneikUNg"/>
+    <ownedAttribute xmi:id="_pj1ssB1hEe2Rc4KneikUNg" name="stock" visibility="private" type="_peeEgB1hEe2Rc4KneikUNg"/>
+    <ownedOperation xmi:id="_pkB58B1hEe2Rc4KneikUNg" name="toString" visibility="public" bodyCondition="_pkDIEB1hEe2Rc4KneikUNg">
+      <ownedRule xmi:id="_pkDIEB1hEe2Rc4KneikUNg">
+        <specification xmi:type="uml:LiteralString" xmi:id="_pkDvIB1hEe2Rc4KneikUNg" name="TemplateBody" value="%DefaultBody%"/>
+      </ownedRule>
+      <ownedParameter xmi:id="_pkFkUB1hEe2Rc4KneikUNg" name="toString" type="_pcRFEB1hEe2Rc4KneikUNg" direction="return"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_pjzQcB1hEe2Rc4KneikUNg" name="Gregorian Calendar"/>
+</uml:Model>
