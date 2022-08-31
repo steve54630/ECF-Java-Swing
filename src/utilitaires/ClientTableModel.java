@@ -104,6 +104,11 @@ public class ClientTableModel extends AbstractTableModel {
 		fireTableRowsInserted(rowCount, rowCount);
 	}
 
+	public Client getClient(int choix)
+	{
+		return clients.get(choix);
+	}
+	
 	/**
 	 * methode pour definir le type de contenu des cellules
 	 */
@@ -118,6 +123,12 @@ public class ClientTableModel extends AbstractTableModel {
 	@Override
 	public boolean isCellEditable(int row, int column) {
 		return false;
+	}
+
+	public void removeClient(int row) {
+		// TODO Auto-generated method stub
+		clients.remove(row);
+		fireTableRowsDeleted(row, row);
 	}
 
 }

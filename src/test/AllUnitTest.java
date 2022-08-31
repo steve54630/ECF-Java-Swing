@@ -7,5 +7,4 @@ import org.junit.platform.suite.api.Suite;
 @SelectClasses({ TestClient.class, TestAchat.class, TestMutuelle.class,
 		TestAdresse.class, TestOrdonnance.class, TestMedecin.class, 
 		TestSpecialiste.class, TestMedicament.class })
-class AllUnitTest {
-}
+class AllUnitTest {}

@@ -227,7 +227,7 @@ public class AchatOrdonnance extends JFrame {
 		if (nouvelleOrdonnance.getMedicaments().size() != 0) {
 			pharma.setOrdonnances(nouvelleOrdonnance);
 			pharma.setAchats(nouvelleOrdonnance);
-			save(pharma, "basedonnees.csv");
+			save(pharma, "donnees");
 			dispose();
 			MainMenu fen = new MainMenu();
 			fen.setVisible(true);

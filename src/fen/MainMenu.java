@@ -82,7 +82,7 @@ public class MainMenu extends JFrame {
 				btnHistoriqueOrdonnanceClick();
 			}
 		});
-		btnHistoriqueOrdonnace.setBounds(36, 211, 212, 23);
+		btnHistoriqueOrdonnace.setBounds(36, 222, 212, 23);
 		contentPane.add(btnHistoriqueOrdonnace);
 
 		JButton btnNewButton_2 = new JButton("Quitter");
@@ -95,13 +95,13 @@ public class MainMenu extends JFrame {
 		btnNewButton_2.setBounds(95, 318, 89, 23);
 		contentPane.add(btnNewButton_2);
 
-		JButton btnDetailClient = new JButton("Détail des clients");
+		JButton btnDetailClient = new JButton("Menu clients");
 		btnDetailClient.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				btnDetailClientClick();
 			}
 		});
-		btnDetailClient.setBounds(71, 245, 133, 23);
+		btnDetailClient.setBounds(71, 268, 133, 23);
 		contentPane.add(btnDetailClient);
 
 		JButton btnHistoriqueAchat = new JButton("Historique des achats");
@@ -112,19 +112,8 @@ public class MainMenu extends JFrame {
 				fen.setVisible(true);
 			}
 		});
-		btnHistoriqueAchat.setBounds(52, 168, 183, 23);
+		btnHistoriqueAchat.setBounds(52, 177, 183, 23);
 		contentPane.add(btnHistoriqueAchat);
-
-		JButton btnNewButton = new JButton("Ajouter Client");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				dispose();
-				AjouterClient fen = new AjouterClient();
-				fen.setVisible(true);
-			}
-		});
-		btnNewButton.setBounds(71, 279, 133, 23);
-		contentPane.add(btnNewButton);
 	}
 
 	/**
@@ -146,16 +135,17 @@ public class MainMenu extends JFrame {
 	 */
 	private void btnDetailClientClick() {
 		try {
-			JList<String> list = new JList<>(new String[] {
-					"Liste Client pharmacie", "Client par mutuelle" });
+			JList<String> list = new JList<>(
+					new String[] { "Editer profil client",
+							"Client par mutuelle", "Client par nom" });
 			JOptionPane.showMessageDialog(this, list, "Choisi une option",
 					JOptionPane.PLAIN_MESSAGE);
 			if (list.getSelectedValue() != null) {
 				if (list.isSelectedIndex(0)) {
 					dispose();
-					DetailClientNom fen = new DetailClientNom();
+					EditionClients fen = new EditionClients();
 					fen.setVisible(true);
-				} else {
+				} else if (list.isSelectedIndex(1)) {
 					ArrayList<Mutuelle> mutuelles = new ArrayList<>();
 					for (Mutuelle mutuelle : App.pharma.getMutuelles())
 						mutuelles.add(mutuelle);
@@ -167,12 +157,18 @@ public class MainMenu extends JFrame {
 						dispose();
 						DetailClientMutuelle fen = new DetailClientMutuelle(
 								(Mutuelle) listeMutuelle.getSelectedValue());
+						fen.setVisible(true);}
+					} else {String choix = null;
+					choix = JOptionPane.showInputDialog(null,
+								"Entre les premières lettres du nom",
+								"Tri par nom", JOptionPane.QUESTION_MESSAGE);
+					if (choix != null) 
+						dispose();
+						DetailClientNom fen = new DetailClientNom(choix);
 						fen.setVisible(true);
 					}
 				}
-			}
-		} catch (NullPointerException e) {
-		}
+		} catch (NullPointerException e) {}
 
 	}
 
@@ -186,7 +182,7 @@ public class MainMenu extends JFrame {
 		JList<String> list = new JList<>(new String[] {
 				"Achat sans ordonnances", "Achat avec ordonnance" });
 		JOptionPane.showMessageDialog(this, list, "Choix type achat",
-					JOptionPane.PLAIN_MESSAGE);
+				JOptionPane.PLAIN_MESSAGE);
 		Client clientChoix = null;
 		if (list.isSelectedIndex(0)) {
 			clientChoix = Utilitaires.choixClient(this);
