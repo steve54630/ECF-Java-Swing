@@ -31,15 +31,15 @@ public class Utilitaires {
 
 			DefaultListModel<String> list = new DefaultListModel<>();
 
-			for (Client client : pharma.getClients())
+			for (Client client : getPharma().getClients())
 				list.addElement(client.getNom() + " " + client.getPrenom());
 
 			JList<String> listeClient = new JList<String>(list);
 			JOptionPane.showMessageDialog(frame, listeClient, "Clients",
 					JOptionPane.PLAIN_MESSAGE);
-			for (int i = 0; i < pharma.getClients().size(); i++) {
+			for (int i = 0; i < getPharma().getClients().size(); i++) {
 				if (listeClient.isSelectedIndex(i))
-					clientChoix = pharma.getClients().get(i);
+					clientChoix = getPharma().getClients().get(i);
 			}
 		return clientChoix;
 	}
@@ -55,15 +55,15 @@ public class Utilitaires {
 
 			DefaultListModel<String> list = new DefaultListModel<>();
 
-			for (Medecin client : pharma.getMedecins())
+			for (Medecin client : getPharma().getMedecins())
 				list.addElement(client.getNom() + " " + client.getPrenom());
 
 			JList<String> listeClient = new JList<String>(list);
 			JOptionPane.showMessageDialog(null, listeClient, "Clients",
 					JOptionPane.PLAIN_MESSAGE);
-			for (int i = 0; i < pharma.getMedecins().size(); i++) {
+			for (int i = 0; i < getPharma().getMedecins().size(); i++) {
 				if (listeClient.isSelectedIndex(i))
-					medecinChoix = pharma.getMedecins().get(i);
+					medecinChoix = getPharma().getMedecins().get(i);
 			}
 		return medecinChoix;
 	}
@@ -78,15 +78,15 @@ public class Utilitaires {
 
 			DefaultListModel<String> list = new DefaultListModel<>();
 
-			for (Medicament medicament : pharma.getMedicaments())
+			for (Medicament medicament : getPharma().getMedicaments())
 				list.addElement(medicament.getNom());
 
 			JList<String> listeClient = new JList<String>(list);
 			JOptionPane.showMessageDialog(null, listeClient, "Clients",
 					JOptionPane.PLAIN_MESSAGE);
-			for (int i = 0; i < pharma.getMedicaments().size(); i++) {
+			for (int i = 0; i < getPharma().getMedicaments().size(); i++) {
 				if (listeClient.isSelectedIndex(i))
-					choix = pharma.getMedicaments().get(i);
+					choix = getPharma().getMedicaments().get(i);
 			}
 		return choix;
 	}
@@ -100,16 +100,6 @@ public class Utilitaires {
 				"Achat de " + achat.getAcheteur().getNom() + " "
 						+ achat.getAcheteur().getPrenom() + ", le "
 						+ achat.dateToString(),
-				JOptionPane.INFORMATION_MESSAGE);
-	}
-	
-	/**
-	 * Afficher les donnees du client dans un {@link JOptionPane}
-	 * @param client : client a afficher
-	 */
-	public static void afficherClient(Client client) {
-		JOptionPane.showMessageDialog(null, client.toString(),
-				client.getNom() + " " + client.getPrenom(),
 				JOptionPane.INFORMATION_MESSAGE);
 	}
 	

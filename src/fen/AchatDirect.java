@@ -186,8 +186,8 @@ public class AchatDirect extends JFrame {
 	 */
 	private void btnValiderClick() {
 		if (nouvelAchat.getMedicaments().size() != 0) {
-			pharma.setAchats(nouvelAchat);
-			save(pharma, "donnees");
+			getPharma().setAchats(nouvelAchat);
+			save(getPharma(), "donnees");
 			dispose();
 			MainMenu fen = new MainMenu();
 			fen.setVisible(true);

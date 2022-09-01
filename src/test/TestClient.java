@@ -164,7 +164,8 @@ class TestClient {
 		specialistes.add(specialiste3);
 		client1 = new Client("Retournay", "Steve", adresse2, "06.81.30.29.76",
 				"190017512703025", "steve54@wanadoo.fr", "1990", "01", "03", medecin1,
-				mutuelle1, specialistes, pharmaTest);
+				mutuelle1, pharmaTest);
+		client1.setSpecialiste(specialiste3);
 		assertEquals("Nom = Retournay, Prenom = Steve\n"
 				+ "Adresse = 30, rue de Nancy, 54630 Richardmenil\n"
 				+ "Numero de telephone = 06.81.30.29.76\n"
@@ -183,15 +184,6 @@ class TestClient {
 		} catch (AppException e) {
 			assert (e.getMessage().contains(
 					"Aucun specialiste ne peut etre ajoute au client"));
-		}
-
-		specialistes = null;
-		try {
-			client1.setListeSpecialiste(null);
-			fail("Une liste de specialistes est ajoute au client");
-		} catch (AppException e) {
-			assert (e.getMessage().contains(
-					"La liste des specialiste ne contient rien du tout."));
 		}
 
 	}

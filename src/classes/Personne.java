@@ -19,7 +19,7 @@ public abstract class Personne implements Serializable {
 	/**
 	 * nom d'une personne
 	 */
-	private String nom;
+	protected String nom;
 	/**
 	 * prenom d'une personne
 	 */
@@ -172,6 +172,11 @@ public abstract class Personne implements Serializable {
 		this.setEmail(email);
 	}
 
+	public Personne ()
+	{
+		this.nom = "";
+	}
+	
 	/**
 	 * methode abstraite pour transformer la personne en texte
 	 */

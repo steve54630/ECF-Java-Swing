@@ -6,9 +6,9 @@ import javax.swing.border.EmptyBorder;
 
 import classes.Client;
 import classes.Medecin;
-import classes.Mutuelle;
+
 import exception.AppException;
-import main.App;
+
 import utilitaires.Utilitaires;
 import javax.swing.JLabel;
 import javax.swing.JList;
@@ -17,7 +17,7 @@ import javax.swing.JOptionPane;
 import java.awt.Font;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
+
 import java.awt.event.ActionEvent;
 import java.awt.Color;
 import java.awt.Toolkit;
@@ -134,42 +134,8 @@ public class MainMenu extends JFrame {
 	 * mutuelle, choix de la mutuelle
 	 */
 	private void btnDetailClientClick() {
-		try {
-			JList<String> list = new JList<>(
-					new String[] { "Editer profil client",
-							"Client par mutuelle", "Client par nom" });
-			JOptionPane.showMessageDialog(this, list, "Choisi une option",
-					JOptionPane.PLAIN_MESSAGE);
-			if (list.getSelectedValue() != null) {
-				if (list.isSelectedIndex(0)) {
-					dispose();
-					EditionClients fen = new EditionClients();
-					fen.setVisible(true);
-				} else if (list.isSelectedIndex(1)) {
-					ArrayList<Mutuelle> mutuelles = new ArrayList<>();
-					for (Mutuelle mutuelle : App.pharma.getMutuelles())
-						mutuelles.add(mutuelle);
-					JList<Object> listeMutuelle = new JList<>(
-							mutuelles.toArray());
-					JOptionPane.showMessageDialog(this, listeMutuelle,
-							"Choisi une option", JOptionPane.PLAIN_MESSAGE);
-					if (listeMutuelle.getSelectedValue() != null) {
-						dispose();
-						DetailClientMutuelle fen = new DetailClientMutuelle(
-								(Mutuelle) listeMutuelle.getSelectedValue());
-						fen.setVisible(true);}
-					} else {String choix = null;
-					choix = JOptionPane.showInputDialog(null,
-								"Entre les premières lettres du nom",
-								"Tri par nom", JOptionPane.QUESTION_MESSAGE);
-					if (choix != null) 
-						dispose();
-						DetailClientNom fen = new DetailClientNom(choix);
-						fen.setVisible(true);
-					}
-				}
-		} catch (NullPointerException e) {}
-
+		dispose();
+		new EditionClients().setVisible(true);
 	}
 
 	/**

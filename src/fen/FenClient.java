@@ -18,19 +18,19 @@ import javax.swing.JOptionPane;
 import javax.swing.JComboBox;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.time.format.DateTimeParseException;
 import java.awt.Toolkit;
+import java.awt.Color;
 
 /**
  * Fenetre pour ajouter un client
  * 
  * @author SRet
  */
-public class AjouterClient extends JFrame {
+public class FenClient extends JFrame {
 
 	/**
 	 * identifiant pour "serialize" un objet
@@ -88,65 +88,78 @@ public class AjouterClient extends JFrame {
 	 * zone de saisi de l'annee de naissance
 	 */
 	private JTextField textAnnee;
-	/**
-	 * liste des specialistes du client de l'ordonnance
-	 */
-	private ArrayList<Specialiste> specialistesClient = new ArrayList<>();
 
 	/**
 	 * Constructeur de la fenetre AjouterClient
 	 */
-	public AjouterClient() {
-		setIconImage(Toolkit.getDefaultToolkit().getImage(AjouterClient.class
-				.getResource("/main/resources/sparadrap.jpg")));
-		setTitle("Nouveau client");
-
+	public FenClient(Client client, boolean editer) {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(
+				FenClient.class.getResource("/main/resources/sparadrap.jpg")));
+		if (client.getNom() == "") {
+			setTitle("Nouveau client");
+		}
+		if (editer && client.getNom() != "")
+			setTitle("Edition du client");
+		if (!editer && client.getNom() != "")
+			setTitle("Detail du client");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 301, 763);
+		setBounds(100, 100, 562, 746);
+		if (!editer) setBounds(100, 100, 562, 655);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
 		textFieldNom = new JTextField();
-		textFieldNom.setBounds(115, 23, 117, 20);
+		textFieldNom.setText(client.getNom());
+		if (client.getNom() != "") {
+			textFieldNom.setEditable(false);
+		}
+		textFieldNom.setBounds(218, 23, 117, 20);
 		contentPane.add(textFieldNom);
 		textFieldNom.setColumns(10);
 
 		textFieldPrenom = new JTextField();
-		textFieldPrenom.setBounds(115, 54, 117, 20);
+		textFieldPrenom.setText(client.getPrenom());
+		if (client.getNom() != "") {
+			textFieldPrenom.setEditable(false);
+		}
+		textFieldPrenom.setBounds(218, 54, 117, 20);
 		contentPane.add(textFieldPrenom);
 		textFieldPrenom.setColumns(10);
 
 		JLabel lbNom = new JLabel("Nom :");
-		lbNom.setBounds(40, 25, 39, 17);
+		lbNom.setBounds(151, 25, 39, 17);
 		contentPane.add(lbNom);
 
 		JLabel lblNewLabel = new JLabel("Prenom : ");
-		lblNewLabel.setBounds(41, 56, 61, 17);
+		lblNewLabel.setBounds(147, 56, 61, 17);
 		contentPane.add(lblNewLabel);
 
 		JLabel lblAdresse = new JLabel("Adresse :");
-		lblAdresse.setBounds(100, 85, 61, 28);
+		lblAdresse.setBounds(228, 85, 61, 28);
 		contentPane.add(lblAdresse);
 
 		JLabel lblNumRue = new JLabel("N°Rue");
-		lblNumRue.setBounds(10, 124, 46, 14);
+		lblNumRue.setBounds(46, 124, 46, 14);
 		contentPane.add(lblNumRue);
 
 		JLabel lblNomRue = new JLabel("Nom de la rue");
-		lblNomRue.setBounds(55, 124, 71, 14);
+		lblNomRue.setBounds(146, 124, 71, 14);
 		contentPane.add(lblNomRue);
 
 		JLabel lblCodePostal = new JLabel("Code Postal");
-		lblCodePostal.setBounds(146, 124, 58, 14);
+		lblCodePostal.setBounds(277, 124, 58, 14);
 		contentPane.add(lblCodePostal);
 
 		JLabel lblVille = new JLabel("Ville");
-		lblVille.setBounds(222, 124, 29, 14);
+		lblVille.setBounds(427, 124, 29, 14);
 		contentPane.add(lblVille);
 
 		textFieldNumRue = new JTextField();
+		if (client.getNom() != "")
+			textFieldNumRue.setText(client.getAdresse().getNumero());
+		textFieldNumRue.setEditable(editer);
 		textFieldNumRue.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyTyped(KeyEvent e) {
@@ -156,16 +169,22 @@ public class AjouterClient extends JFrame {
 				}
 			}
 		});
-		textFieldNumRue.setBounds(6, 149, 39, 20);
+		textFieldNumRue.setBounds(40, 149, 39, 20);
 		contentPane.add(textFieldNumRue);
 		textFieldNumRue.setColumns(10);
 
 		textFieldNomRue = new JTextField();
-		textFieldNomRue.setBounds(53, 149, 86, 20);
+		if (client.getNom() != "")
+			textFieldNomRue.setText(client.getAdresse().getRue());
+		textFieldNomRue.setEditable(editer);
+		textFieldNomRue.setBounds(115, 149, 152, 20);
 		contentPane.add(textFieldNomRue);
 		textFieldNomRue.setColumns(10);
 
 		textFieldCodePostal = new JTextField();
+		if (client.getNom() != "")
+			textFieldCodePostal.setText(client.getAdresse().getCodePostal());
+		textFieldCodePostal.setEditable(editer);
 		textFieldCodePostal.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyTyped(KeyEvent e) {
@@ -176,51 +195,73 @@ public class AjouterClient extends JFrame {
 			}
 		});
 
-		textFieldCodePostal.setBounds(146, 149, 58, 20);
+		textFieldCodePostal.setBounds(277, 149, 58, 20);
 		contentPane.add(textFieldCodePostal);
 		textFieldCodePostal.setColumns(10);
 
 		textFieldVille = new JTextField();
-		textFieldVille.setBounds(214, 149, 61, 20);
+		if (client.getNom() != "")
+			textFieldVille.setText(client.getAdresse().getVille());
+		textFieldVille.setEditable(editer);
+		textFieldVille.setBounds(356, 149, 164, 20);
 		contentPane.add(textFieldVille);
 		textFieldVille.setColumns(10);
 
 		JLabel lblNumTelephone = new JLabel("N° de téléphone");
-		lblNumTelephone.setBounds(6, 196, 86, 20);
+		lblNumTelephone.setBounds(93, 196, 86, 20);
 		contentPane.add(lblNumTelephone);
 
 		textFieldNumTelephone = new JTextField();
-		textFieldNumTelephone.setBounds(115, 196, 160, 20);
+		if (client.getNom() != "")
+			textFieldNumTelephone.setText(client.getNumeroTelephone());
+		textFieldNumTelephone.setEditable(editer);
+		textFieldNumTelephone.setBounds(189, 196, 160, 20);
 		contentPane.add(textFieldNumTelephone);
 		textFieldNumTelephone.setColumns(10);
 
 		textFieldSecuriteSociale = new JTextField();
-		textFieldSecuriteSociale.setBounds(115, 235, 160, 20);
+		if (client.getNom() != "") {
+			textFieldSecuriteSociale.setText(client.getSecuriteSociale());
+		}
+		if (client.getNom() != "") {
+			textFieldSecuriteSociale.setEditable(false);
+		}
+		textFieldSecuriteSociale.setBounds(189, 227, 160, 20);
 		contentPane.add(textFieldSecuriteSociale);
 		textFieldSecuriteSociale.setColumns(10);
 
 		JLabel lblNewLabel_7 = new JLabel("Numéro de \r\n");
-		lblNewLabel_7.setBounds(10, 227, 61, 20);
+		lblNewLabel_7.setBounds(93, 227, 61, 20);
 		contentPane.add(lblNewLabel_7);
 
 		JLabel lblEmail = new JLabel("E-mail");
-		lblEmail.setBounds(29, 286, 46, 20);
+		lblEmail.setBounds(115, 286, 46, 20);
 		contentPane.add(lblEmail);
 
 		textFieldEmail = new JTextField();
-		textFieldEmail.setBounds(75, 286, 200, 20);
+		if (client.getNom() != "") {
+			textFieldEmail.setText(client.getEmail());
+		}
+		textFieldEmail.setEditable(editer);
+		textFieldEmail.setBounds(189, 286, 200, 20);
 		contentPane.add(textFieldEmail);
 		textFieldEmail.setColumns(10);
 
 		JLabel lblSecuriteSociale = new JLabel("sécurité sociale");
-		lblSecuriteSociale.setBounds(10, 241, 97, 14);
+		lblSecuriteSociale.setBounds(93, 240, 97, 14);
 		contentPane.add(lblSecuriteSociale);
 
 		JLabel lblDateNaissance = new JLabel("Date de naissance :");
-		lblDateNaissance.setBounds(93, 327, 139, 14);
+		lblDateNaissance.setBounds(189, 327, 139, 14);
 		contentPane.add(lblDateNaissance);
 
 		textJour = new JTextField();
+		if (client.getNom() != "") {
+			textJour.setText("" + client.getDateNaissance().getDayOfMonth());
+		}
+		if (client.getNom() != "") {
+			textJour.setEditable(false);
+		}
 		textJour.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyTyped(KeyEvent e) {
@@ -230,11 +271,18 @@ public class AjouterClient extends JFrame {
 				}
 			}
 		});
-		textJour.setBounds(10, 379, 51, 20);
+		textJour.setBounds(75, 379, 51, 20);
 		contentPane.add(textJour);
 		textJour.setColumns(10);
 
 		textMois = new JTextField();
+		textMois = new JTextField();
+		if (client.getNom() != "") {
+			textMois.setText("" + client.getDateNaissance().getMonth());
+		}
+		if (client.getNom() != "") {
+			textMois.setEditable(false);
+		}
 		textMois.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyTyped(KeyEvent e) {
@@ -244,11 +292,18 @@ public class AjouterClient extends JFrame {
 				}
 			}
 		});
-		textMois.setBounds(100, 379, 61, 20);
+		textMois.setBounds(189, 379, 61, 20);
 		contentPane.add(textMois);
 		textMois.setColumns(10);
 
 		textAnnee = new JTextField();
+		textAnnee = new JTextField();
+		if (client.getNom() != "") {
+			textAnnee.setText("" + client.getDateNaissance().getYear());
+		}
+		if (client.getNom() != "") {
+			textAnnee.setEditable(false);
+		}
 		textAnnee.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyTyped(KeyEvent e) {
@@ -258,43 +313,96 @@ public class AjouterClient extends JFrame {
 				}
 			}
 		});
-		textAnnee.setBounds(189, 379, 86, 20);
+		textAnnee.setBounds(315, 379, 86, 20);
 		contentPane.add(textAnnee);
 		textAnnee.setColumns(10);
 
 		JLabel lblJour = new JLabel("Jour");
-		lblJour.setBounds(27, 354, 29, 14);
+		lblJour.setBounds(93, 352, 29, 14);
 		contentPane.add(lblJour);
 
 		JLabel lblMois = new JLabel("Mois");
-		lblMois.setBounds(115, 354, 29, 14);
+		lblMois.setBounds(203, 352, 29, 14);
 		contentPane.add(lblMois);
 
 		JLabel lblAnnee = new JLabel("Année");
-		lblAnnee.setBounds(212, 354, 39, 14);
+		lblAnnee.setBounds(336, 352, 39, 14);
 		contentPane.add(lblAnnee);
 
 		JComboBox<Medecin> comboBoxMedecin = new JComboBox<>();
-		for (Medecin medecin : pharma.getMedecins()) {
+		comboBoxMedecin.setForeground(Color.BLACK);
+		comboBoxMedecin.setEnabled(editer);
+		for (Medecin medecin : getPharma().getMedecins()) {
 			comboBoxMedecin.addItem(medecin);
 		}
-		comboBoxMedecin.setBounds(75, 423, 200, 22);
+		comboBoxMedecin.setBounds(171, 424, 200, 22);
+		if (!editer)
+			comboBoxMedecin.setVisible(false);
 		contentPane.add(comboBoxMedecin);
 
 		JLabel lblMedecin = new JLabel("Medecin");
-		lblMedecin.setBounds(10, 425, 69, 20);
+		lblMedecin.setBounds(92, 425, 69, 20);
 		contentPane.add(lblMedecin);
 
 		JLabel lblMutuelle = new JLabel("Mutuelle");
-		lblMutuelle.setBounds(10, 466, 65, 14);
+		lblMutuelle.setBounds(93, 466, 65, 14);
 		contentPane.add(lblMutuelle);
 
 		JComboBox<Mutuelle> comboBoxMutuelle = new JComboBox<>();
-		for (Mutuelle mutuelle : pharma.getMutuelles()) {
+		comboBoxMutuelle.setForeground(Color.BLACK);
+		comboBoxMutuelle.setEnabled(editer);
+		for (Mutuelle mutuelle : getPharma().getMutuelles()) {
 			comboBoxMutuelle.addItem(mutuelle);
 		}
-		comboBoxMutuelle.setBounds(75, 462, 200, 22);
+		comboBoxMutuelle.setBounds(171, 462, 200, 22);
 		contentPane.add(comboBoxMutuelle);
+		comboBoxMutuelle.setVisible(editer);
+
+		JLabel lblNewLabel_1 = new JLabel("Specialiste");
+		lblNewLabel_1.setBounds(189, 525, 129, 14);
+		contentPane.add(lblNewLabel_1);
+
+		JComboBox<Specialiste> comboBoxSpecialiste = new JComboBox<>();
+		if (editer)
+		{for (Specialiste specialiste : getPharma().getSpecialiste())
+			comboBoxSpecialiste.addItem(specialiste);}
+		else 
+		{for (Specialiste specialiste : client.getSpecialiste())
+			comboBoxSpecialiste.addItem(specialiste);}
+		comboBoxSpecialiste.setBounds(103, 550, 266, 22);
+		contentPane.add(comboBoxSpecialiste);
+
+		JButton btnAjouterSpecialiste = new JButton("Ajouter specialiste");
+		btnAjouterSpecialiste.setVisible(editer);
+		btnAjouterSpecialiste.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (!client.getSpecialiste()
+						.contains(comboBoxSpecialiste.getSelectedItem()))
+					try {
+						client.setSpecialiste((Specialiste) comboBoxSpecialiste
+								.getSelectedItem());
+					} catch (AppException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+			}
+		});
+		btnAjouterSpecialiste.setBounds(138, 592, 211, 23);
+		contentPane.add(btnAjouterSpecialiste);
+
+		JLabel lblMedecinClient = new JLabel("" + client.getMedecin());
+		lblMedecinClient.setBounds(186, 428, 200, 14);
+		contentPane.add(lblMedecinClient);
+		lblMedecinClient.setVisible(false);
+		if (editer == false)
+			lblMedecinClient.setVisible(true);
+
+		JLabel lblMutuelleClient = new JLabel("" + client.getMutuelle());
+		lblMutuelleClient.setBounds(186, 466, 203, 14);
+		contentPane.add(lblMutuelleClient);
+		lblMutuelleClient.setVisible(false);
+		if (editer == false)
+			lblMutuelleClient.setVisible(true);
 
 		JButton btnValider = new JButton("Valider");
 		btnValider.addActionListener(new ActionListener() {
@@ -304,20 +412,23 @@ public class AjouterClient extends JFrame {
 							.getSelectedItem();
 					Mutuelle mutuelleChoix = (Mutuelle) comboBoxMutuelle
 							.getSelectedItem();
-					@SuppressWarnings("unused")
-					Client newClient = new Client(textFieldNom.getText(),
-							textFieldPrenom.getText(),
-							new Adresse(textFieldNumRue.getText(),
-									textFieldNomRue.getText(),
-									textFieldCodePostal.getText(),
-									textFieldVille.getText()),
-							textFieldNumTelephone.getText(),
-							textFieldSecuriteSociale.getText(),
-							textFieldEmail.getText(), textAnnee.getText(),
-							textMois.getText(), textJour.getText(),
-							medecinChoix, mutuelleChoix, specialistesClient,
-							pharma);
-					save(pharma, "donnees");
+					Adresse adresseClient = new Adresse(
+							textFieldNumRue.getText(),
+							textFieldNomRue.getText(),
+							textFieldCodePostal.getText(),
+							textFieldVille.getText());
+					client.setNom(textFieldNom.getText());
+					client.setPrenom(textFieldPrenom.getText());
+					client.setAdresse(adresseClient);
+					client.setNumeroTelephone(textFieldNumTelephone.getText());
+					client.setSecuriteSociale(
+							textFieldSecuriteSociale.getText());
+					client.setEmail(textFieldEmail.getText());
+					client.setDateDeNaissance(textAnnee.getText(),
+							textMois.getText(), textJour.getText());
+					client.setMedecin(medecinChoix);
+					client.setMutuelle(mutuelleChoix);
+					save(getPharma(), "donnees");
 					dispose();
 					EditionClients fen = new EditionClients();
 					fen.setVisible(true);
@@ -327,47 +438,38 @@ public class AjouterClient extends JFrame {
 				} catch (DateTimeParseException e1) {
 					// TODO Auto-generated catch block
 					JOptionPane.showMessageDialog(null,
-					"Jour = xx, Mois = xx, Annee = xx", "Erreur",
+							"Jour = xx, Mois = xx, Annee = xx", "Erreur",
+							JOptionPane.ERROR_MESSAGE);
+				} catch (NullPointerException e1) {
+					JOptionPane.showMessageDialog(null,
+							"Aucun client n'est ajouté", "Erreur",
 							JOptionPane.ERROR_MESSAGE);
 				}
+				JLabel lblMutuelleClient = new JLabel(
+						"" + client.getMutuelle());
+				lblMutuelleClient.setBounds(186, 466, 203, 14);
+				contentPane.add(lblMutuelleClient);
+				if (editer)
+					lblMutuelleClient.setVisible(false);
 			}
 		});
-
-		btnValider.setBounds(10, 677, 89, 23);
+		btnValider.setBounds(40, 655, 89, 23);
 		contentPane.add(btnValider);
+		if (!editer)
+			btnValider.setVisible(false);
 
 		JButton btnRetour = new JButton("Retour");
 		btnRetour.addActionListener(new ActionListener() {
+
 			public void actionPerformed(ActionEvent e) {
 				dispose();
 				EditionClients fen = new EditionClients();
 				fen.setVisible(true);
 			}
 		});
-		btnRetour.setBounds(171, 677, 89, 23);
+		btnRetour.setBounds(416, 655, 89, 23);
+		if (!editer) btnRetour.setBounds(427, 550, 89, 23);
 		contentPane.add(btnRetour);
 
-		JLabel lblNewLabel_1 = new JLabel("Specialiste");
-		lblNewLabel_1.setBounds(115, 504, 129, 14);
-		contentPane.add(lblNewLabel_1);
-
-		JComboBox<Specialiste> comboBoxSpecialiste = new JComboBox<>();
-		for (Specialiste specialiste : pharma.getSpecialiste()) {
-			comboBoxSpecialiste.addItem(specialiste);
-		}
-		comboBoxSpecialiste.setBounds(10, 529, 265, 22);
-		contentPane.add(comboBoxSpecialiste);
-
-		JButton btnAjouterSpecialiste = new JButton("Ajouter specialiste");
-		btnAjouterSpecialiste.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if (!specialistesClient
-						.contains(comboBoxSpecialiste.getSelectedItem()))
-					specialistesClient.add((Specialiste) comboBoxSpecialiste
-							.getSelectedItem());
-			}
-		});
-		btnAjouterSpecialiste.setBounds(40, 562, 211, 23);
-		contentPane.add(btnAjouterSpecialiste);
 	}
 }

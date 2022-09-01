@@ -24,15 +24,15 @@ public class App {
 	/**
 	 * Ensemble des donnees de la pharmacie
 	 */
-	public static Pharmacie pharma = new Pharmacie();
-	/**
-	 * Flux d'entree de donnees de l'application
-	 */
-	static FileInputStream fileInputStream;
+	private static Pharmacie pharma = new Pharmacie();
 	/**
 	 * fichier ou les donnees sont enregistres
 	 */
 	private static String file = "donnees";
+
+	public static Pharmacie getPharma() {
+		return pharma;
+	}
 
 	/**
 	 * Entree de l'application
@@ -107,7 +107,7 @@ public class App {
 //		client3.setSpecialiste(specialiste2);
 //		client3.setSpecialiste(specialiste3);
 //		save(pharma, file);
-		pharma = load(file);
+		pharma = (Pharmacie) load(file);
 		start();
 	}
 
@@ -146,13 +146,13 @@ public class App {
 	 * @param file : fichier a lire
 	 * @return les donnees de la pharmacie sauvegarde dans le fichier
 	 */
-	public static Pharmacie load(String file) {
+	public static Object load(String file) {
 
-		Pharmacie pharma = null;
+		Object objet = null;
 		try {
 			FileInputStream fileIn = new FileInputStream(file);
 			ObjectInputStream in = new ObjectInputStream(fileIn);
-			pharma = (Pharmacie) in.readObject();
+			objet = in.readObject();
 			in.close();
 		} catch (FileNotFoundException e) {
 			JOptionPane.showMessageDialog(null,
@@ -164,7 +164,7 @@ public class App {
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}
-		return pharma;
+		return objet;
 	}
 
 }

@@ -41,6 +41,7 @@ public class Client extends Personne {
 	 * numero de securite sociale du client
 	 */
 	private String securiteSociale;
+	private Pharmacie pharma;
 
 	/**
 	 * getter pour le numero de securite sociale
@@ -149,20 +150,6 @@ public class Client extends Personne {
 	}
 
 	/**
-	 * setter pour ajouter une liste de specialistes a un client
-	 * 
-	 * @param specialiste : specialiste du client;
-	 * @throws AppException : la liste a ajoute est vide
-	 */
-	public void setListeSpecialiste(ArrayList<Specialiste> specialiste)
-			throws AppException {
-		if (specialiste == null)
-			throw new AppException
-			("La liste des specialiste ne contient rien du tout.");
-		this.specialiste = specialiste;
-	}
-
-	/**
 	 * setter pour ajouter un specialiste a la liste du client
 	 * 
 	 * @param specialiste : {@link Specialiste} à ajouter au client
@@ -206,44 +193,15 @@ public class Client extends Personne {
 		this.getMutuelle().ajouterClients(this);
 		this.setMedecin(medecin);
 		this.getMedecin().ajouterPatient(this);
-		pharma.setClients(this);
+		this.setPharma(pharma);
+		this.getPharma().setClients(this);
 	}
 
-	/**
-	 * Constructeur du client
-	 * 
-	 * @param nom             : nom du client
-	 * @param prenom          : prenom du client
-	 * @param adresse         : adresse du client
-	 * @param numeroTelephone : numero de telephone du client
-	 * @param securiteSociale : numero de securite sociale du client
-	 * @param email           : email du client
-	 * @param year            : annee de naissance du client
-	 * @param month           : mois de naisssance du client
-	 * @param day             : jour de naissance du client
-	 * @param medecin         : Medecin du client
-	 * @param mutuelle        : mutuelle du client
-	 * @param specialistes    : liste des specialistes a ajouter au client
-	 * @param pharma          : pharmacie ou est enregistre le client
-	 * @throws AppException : erreurs de l'utilisateur 
-	 */
-	public Client(String nom, String prenom, Adresse adresse,
-			String numeroTelephone, String securiteSociale, String email,
-			String year, String month, String day, Medecin medecin, Mutuelle mutuelle,
-			ArrayList<Specialiste> specialistes, Pharmacie pharma)
-			throws AppException {
-		super(nom, prenom, adresse, numeroTelephone, email);
-		// Constructeur de la classe client
-		this.setDateDeNaissance(year, month, day);
-		this.setSecuriteSociale(securiteSociale);
-		this.setMutuelle(mutuelle);
-		this.getMutuelle().ajouterClients(this);
-		this.setMedecin(medecin);
-		this.getMedecin().ajouterPatient(this);
-		this.setListeSpecialiste(specialistes);
-		pharma.setClients(this);
+	public Client ()
+	{
+		
 	}
-
+	
 	/**
 	 * Afficher la liste des specialistes
 	 * 
@@ -274,6 +232,14 @@ public class Client extends Personne {
 				+ "Medecin traitant = " + this.medecin.getNom() + " "
 				+ this.getMedecin().getPrenom() + "\n" + "Specialiste = "
 				+ this.afficherListeSpecialiste();
+	}
+
+	public Pharmacie getPharma() {
+		return pharma;
+	}
+
+	public void setPharma(Pharmacie pharma) {
+		this.pharma = pharma;
 	}
 
 }

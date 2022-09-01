@@ -21,12 +21,16 @@ public class ClientTableModel extends AbstractTableModel {
 	 * Nom des colonnes de la table
 	 */
 	private String[] columnNames = { "Nom", "Prenom", "Telephone",
-			"N°Securité Sociale", "Medecin traitant" };
+			"N°Securité Sociale", "Medecin traitant", "Mutuelle" };
 
 	/**
 	 * Liste des clients contenus dans la table
 	 */
 	private List<Client> clients;
+	
+	public List<Client> getClients() {
+		return clients;
+	}
 
 	/**
 	 * Constructeur du modele de la table
@@ -82,6 +86,8 @@ public class ClientTableModel extends AbstractTableModel {
 		case 4:
 			return client.getMedecin().getNom() + " "
 					+ client.getMedecin().getPrenom();
+		case 5:
+			return client.getMutuelle();
 		default:
 			return "";
 		}

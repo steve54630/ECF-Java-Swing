@@ -73,7 +73,7 @@ public class AchatOrdonnance extends JFrame {
 				.getResource("/main/resources/sparadrap.jpg")));
 		setResizable(false);
 		nouvelleOrdonnance = new Ordonnance(client, client.getMedecin(),
-				pharma);
+				getPharma());
 		setTitle("Ordonnance pour " + client.getNom() + " "
 				+ client.getPrenom());
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -225,9 +225,9 @@ public class AchatOrdonnance extends JFrame {
 	 */
 	private void btnValiderClick() {
 		if (nouvelleOrdonnance.getMedicaments().size() != 0) {
-			pharma.setOrdonnances(nouvelleOrdonnance);
-			pharma.setAchats(nouvelleOrdonnance);
-			save(pharma, "donnees");
+			getPharma().setOrdonnances(nouvelleOrdonnance);
+			getPharma().setAchats(nouvelleOrdonnance);
+			save(getPharma(), "donnees");
 			dispose();
 			MainMenu fen = new MainMenu();
 			fen.setVisible(true);

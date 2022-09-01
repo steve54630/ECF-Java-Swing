@@ -5,7 +5,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import classes.Achat;
-import main.App;
+import static main.App.*;
 import utilitaires.AchatTableModel;
 import utilitaires.Utilitaires;
 
@@ -13,10 +13,10 @@ import javax.swing.JTable;
 import javax.swing.JScrollPane;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
-
-import static main.App.pharma;
-
 import java.awt.event.ActionEvent;
+
+import static main.App.getPharma;
+
 import java.awt.Toolkit;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -68,7 +68,7 @@ public class HistoriqueAchat extends JFrame {
 				if (e.getClickCount() == 2) {
 					try {
 					Utilitaires.afficherAchat	
-					(pharma.getAchats().get(table.getSelectedRow()));
+					(getPharma().getAchats().get(table.getSelectedRow()));
 					} catch (NullPointerException NPE) {
 					} catch (IndexOutOfBoundsException IOBE) {
 					}
@@ -97,7 +97,7 @@ public class HistoriqueAchat extends JFrame {
 		});
 		btnQuitter.setBounds(331, 248, 75, 37);
 		contentPane.add(btnQuitter);
-		for (Achat achat : App.pharma.getAchats()) {
+		for (Achat achat : getPharma().getAchats()) {
 			model.addAchat(achat);
 		}
 	}
