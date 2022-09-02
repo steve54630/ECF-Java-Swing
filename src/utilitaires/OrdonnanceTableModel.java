@@ -115,4 +115,15 @@ public class OrdonnanceTableModel extends AbstractTableModel {
 		return false;
 	}
 
+	public Ordonnance getOrdonnance(int choix)
+	{
+		return ordonnances.get(choix);
+	}
+	
+	public void removeOrdonnance(int row) {
+		// TODO Auto-generated method stub
+		ordonnances.remove(row);
+		fireTableRowsDeleted(row, row);
+	}
+	
 }

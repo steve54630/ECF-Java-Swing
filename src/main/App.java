@@ -88,15 +88,15 @@ public class App {
 //				"06.25.99.11.30", "154028814523624", "t.henri@orange.fr", "1954",
 //				"02", "28", medecin1, mutuelle2, pharma);
 //		Medicament medicament1 = new Medicament("Acuitel", "Antihypertenseur",
-//				3, 50, "1989", "04", "14", pharma);
-//		Medicament medicament2 = new Medicament("Doliprane", "antalgique", 2,
+//				3.4, 50, "1989", "04", "14", pharma);
+//		Medicament medicament2 = new Medicament("Doliprane", "antalgique", 2.1,
 //				60, "1984", "01", "01", pharma);
 //		Medicament medicament3 = new Medicament("Oxybutine",
-//				"anticholinergique", 3, 40, "2012", "11", "16", pharma);
+//				"anticholinergique", 2.9, 40, "2012", "11", "16", pharma);
 //		Medicament medicament4 = new Medicament("Parrafin", "Emoliant", 10, 80,
 //				"2017", "07", "19", pharma);
 //		Medicament medicament5 = new Medicament("Amoxicilline", "Antibiotique",
-//				1, 60, "1953", "05", "02", pharma);
+//				1.5, 60, "1953", "05", "02", pharma);
 //		client1.setSpecialiste(specialiste1);
 //		client1.setSpecialiste(specialiste2);
 //		client1.setSpecialiste(specialiste3);

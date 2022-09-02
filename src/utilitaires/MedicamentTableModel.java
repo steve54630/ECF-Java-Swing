@@ -124,4 +124,9 @@ public class MedicamentTableModel extends AbstractTableModel {
 		return false;
 	}
 
+	public Medicament getMedicament(int selectedRow) {
+		// TODO Auto-generated method stub
+		return medicaments.get(selectedRow);
+	}
+
 }

@@ -27,6 +27,7 @@ import java.awt.event.ActionEvent;
 import java.awt.Toolkit;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
 import java.awt.event.ItemListener;
 import java.awt.event.ItemEvent;
 
@@ -72,8 +73,7 @@ public class AchatOrdonnance extends JFrame {
 		setIconImage(Toolkit.getDefaultToolkit().getImage(AchatOrdonnance.class
 				.getResource("/main/resources/sparadrap.jpg")));
 		setResizable(false);
-		nouvelleOrdonnance = new Ordonnance(client, client.getMedecin(),
-				getPharma());
+		nouvelleOrdonnance = new Ordonnance(client, client.getMedecin());
 		setTitle("Ordonnance pour " + client.getNom() + " "
 				+ client.getPrenom());
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -225,8 +225,19 @@ public class AchatOrdonnance extends JFrame {
 	 */
 	private void btnValiderClick() {
 		if (nouvelleOrdonnance.getMedicaments().size() != 0) {
-			getPharma().setOrdonnances(nouvelleOrdonnance);
+			for (Medicament medicament : getPharma().getMedicaments())
+				for (Medicament medicament2 : nouvelleOrdonnance.getMedicaments())
+					if (medicament.getNom() == medicament2.getNom())
+						try {
+							medicament.setStock(medicament.getStock() - 1);
+						} catch (AppException e) {
+							// TODO Auto-generated catch block
+							JOptionPane.showMessageDialog(null,
+									"Plus aucun medicament n'est disponible en stock",
+									"Erreur", JOptionPane.ERROR_MESSAGE);
+						};
 			getPharma().setAchats(nouvelleOrdonnance);
+			getPharma().setOrdonnances(nouvelleOrdonnance);
 			save(getPharma(), "donnees");
 			dispose();
 			MainMenu fen = new MainMenu();
@@ -251,6 +262,8 @@ public class AchatOrdonnance extends JFrame {
 		}
 		if (medicamentChoix != null) {
 			nouvelleOrdonnance.setMedicaments(medicamentChoix);
+			ArrayList<Medicament> medicamentListe = nouvelleOrdonnance.getMedicaments();
+			medicamentChoix = medicamentListe.get(medicamentListe.size()-1);
 			model.addMedicament(medicamentChoix);
 			nouvelleOrdonnance.setPrixTotal(nouvelleOrdonnance.getPrixTotal()
 					+ medicamentChoix.getPrix());

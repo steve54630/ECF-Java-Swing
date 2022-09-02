@@ -123,7 +123,13 @@ public class Achat implements Serializable {
 	public void setMedicaments(Medicament medicament) throws AppException {
 		if (medicament == null)
 			throw new AppException("Il faut ajouter " + "un medicament");
-		this.medicaments.add(medicament);
+		Medicament medicamentAchete = new Medicament(medicament.getNom(),
+				medicament.getCategorie(),
+				medicament.getPrix(),
+				medicament.getStock(),
+				medicament.getDateCirculation(),
+				medicament.getPharma());
+		this.medicaments.add(medicamentAchete);
 	}
 
 	/**

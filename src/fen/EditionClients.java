@@ -29,6 +29,10 @@ import java.util.ArrayList;
 import javax.swing.JComboBox;
 
 
+/** Fenetre pour ajouter, editer et consulter les details d'un client
+ * @author SRet
+ *
+ */
 public class EditionClients extends JFrame {
 
 	/**
@@ -124,7 +128,7 @@ public class EditionClients extends JFrame {
 		contentPane.add(btnAjouterClient);
 
 		JLabel lblNewLabel = new JLabel(
-				"Double-cliquez pour afficher le client séléctionné");
+				"Clique 2 fois sur un client pour l'afficher");
 		lblNewLabel.setBounds(10, 412, 315, 14);
 		contentPane.add(lblNewLabel);
 

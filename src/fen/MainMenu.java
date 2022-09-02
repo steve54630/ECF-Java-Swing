@@ -5,7 +5,6 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import classes.Client;
-import classes.Medecin;
 
 import exception.AppException;
 
@@ -72,7 +71,7 @@ public class MainMenu extends JFrame {
 				}
 			}
 		});
-		btnAchat.setBounds(95, 133, 89, 23);
+		btnAchat.setBounds(95, 134, 89, 23);
 		contentPane.add(btnAchat);
 
 		JButton btnHistoriqueOrdonnace = new JButton(
@@ -82,7 +81,7 @@ public class MainMenu extends JFrame {
 				btnHistoriqueOrdonnanceClick();
 			}
 		});
-		btnHistoriqueOrdonnace.setBounds(36, 222, 212, 23);
+		btnHistoriqueOrdonnace.setBounds(38, 202, 212, 23);
 		contentPane.add(btnHistoriqueOrdonnace);
 
 		JButton btnNewButton_2 = new JButton("Quitter");
@@ -92,7 +91,7 @@ public class MainMenu extends JFrame {
 				System.exit(0);
 			}
 		});
-		btnNewButton_2.setBounds(95, 318, 89, 23);
+		btnNewButton_2.setBounds(95, 304, 89, 23);
 		contentPane.add(btnNewButton_2);
 
 		JButton btnDetailClient = new JButton("Menu clients");
@@ -101,7 +100,7 @@ public class MainMenu extends JFrame {
 				btnDetailClientClick();
 			}
 		});
-		btnDetailClient.setBounds(71, 268, 133, 23);
+		btnDetailClient.setBounds(80, 236, 133, 23);
 		contentPane.add(btnDetailClient);
 
 		JButton btnHistoriqueAchat = new JButton("Historique des achats");
@@ -112,21 +111,28 @@ public class MainMenu extends JFrame {
 				fen.setVisible(true);
 			}
 		});
-		btnHistoriqueAchat.setBounds(52, 177, 183, 23);
+		btnHistoriqueAchat.setBounds(50, 168, 183, 23);
 		contentPane.add(btnHistoriqueAchat);
+		
+		JButton btnStock = new JButton("Stock");
+		btnStock.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				new StockMedicament().setVisible(true);
+			}
+		});
+		btnStock.setBounds(95, 270, 89, 23);
+		contentPane.add(btnStock);
 	}
 
 	/**
 	 * Effet du bouton Historique ordonnances
 	 */
 	private void btnHistoriqueOrdonnanceClick() {
-		Medecin medecinChoix = Utilitaires.choixMedecin();
-		if (medecinChoix != null) {
 			dispose();
-			HistoriqueOrdonnance fen = new HistoriqueOrdonnance(medecinChoix);
+			HistoriqueOrdonnance fen = new HistoriqueOrdonnance();
 			fen.setVisible(true);
 		}
-	}
 
 	/**
 	 * Effet du bouton Detail des clients : 1) ouvre une fenetre qui permet

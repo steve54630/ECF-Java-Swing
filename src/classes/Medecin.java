@@ -93,6 +93,10 @@ public class Medecin extends Personne {
 		pharma.setMedecins(this);
 	}
 
+	public Medecin() {
+		// TODO Auto-generated constructor stub
+	}
+
 	/**
 	 * ajouter un patient a la liste
 	 * 

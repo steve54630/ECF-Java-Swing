@@ -39,7 +39,7 @@ class TestOrdonnance {
 				"01", "03", medecin1, mutuelle1, pharmaTest);
 		Medicament medicament = new Medicament("Amoxicilline", "Antibiotique",
 				1, 60, "1953", "05","02", pharmaTest);
-		Ordonnance achat = new Ordonnance(client1, medecin1, pharmaTest);
+		Ordonnance achat = new Ordonnance(client1, medecin1);
 		achat.setMedicaments(medicament);
 		assertEquals(client1, achat.getAcheteur());
 		assertTrue(achat.getMedicaments().contains(medicament));
@@ -69,7 +69,7 @@ class TestOrdonnance {
 				pharmaTest);
 		Medicament medicament = new Medicament("Amoxicilline", "Antibiotique",
 				1, 60, "1953", "05", "02", pharmaTest);
-		Ordonnance achat = new Ordonnance(client1, medecin1, pharmaTest);
+		Ordonnance achat = new Ordonnance(client1, medecin1);
 		achat.setMedicaments(medicament);
 		achat.setSpecialiste(specialiste);
 		assertEquals(client1, achat.getAcheteur());

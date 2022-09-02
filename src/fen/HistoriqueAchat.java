@@ -20,6 +20,9 @@ import static main.App.getPharma;
 import java.awt.Toolkit;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import javax.swing.JTextArea;
+import java.awt.SystemColor;
+import java.awt.Font;
 
 /**
  * Fenetre pour l'historique des achats
@@ -53,14 +56,14 @@ public class HistoriqueAchat extends JFrame {
 				.getResource("/main/resources/sparadrap.jpg")));
 		setTitle("Historique des achats");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 464, 335);
+		setBounds(100, 100, 526, 400);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(55, 21, 348, 213);
+		scrollPane.setBounds(43, 21, 417, 263);
 		contentPane.add(scrollPane);
 		table.addMouseListener(new MouseAdapter() {
 			@Override
@@ -85,7 +88,7 @@ public class HistoriqueAchat extends JFrame {
 				fen.setVisible(true);
 			}
 		});
-		btnRetour.setBounds(29, 248, 75, 37);
+		btnRetour.setBounds(27, 313, 75, 37);
 		contentPane.add(btnRetour);
 
 		JButton btnQuitter = new JButton("Quitter");
@@ -95,8 +98,16 @@ public class HistoriqueAchat extends JFrame {
 				System.exit(0);
 			}
 		});
-		btnQuitter.setBounds(331, 248, 75, 37);
+		btnQuitter.setBounds(409, 313, 75, 37);
 		contentPane.add(btnQuitter);
+		
+		JTextArea txtrCliqueFois_1 = new JTextArea();
+		txtrCliqueFois_1.setText("Clique 2 fois sur un achat\r\npour en afficher les détails");
+		txtrCliqueFois_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		txtrCliqueFois_1.setEditable(false);
+		txtrCliqueFois_1.setBackground(SystemColor.menu);
+		txtrCliqueFois_1.setBounds(157, 307, 195, 43);
+		contentPane.add(txtrCliqueFois_1);
 		for (Achat achat : getPharma().getAchats()) {
 			model.addAchat(achat);
 		}

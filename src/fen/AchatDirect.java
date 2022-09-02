@@ -26,6 +26,7 @@ import javax.swing.JOptionPane;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
 
 /**
  * Fenetre pour un achat sans ordonnance
@@ -114,11 +115,11 @@ public class AchatDirect extends JFrame {
 							lblPrixTotal.setText("Prix total = "
 									+ nouvelAchat.getPrixTotal());
 						} catch (NullPointerException | AppException NPE) {
+						}
+						;
 					}
-					;
 				}
-				}
-			}	
+			}
 		});
 		titreColonnes.setViewportView(listeProduitsAchetes);
 		listeProduitsAchetes.setBorder(
@@ -186,6 +187,18 @@ public class AchatDirect extends JFrame {
 	 */
 	private void btnValiderClick() {
 		if (nouvelAchat.getMedicaments().size() != 0) {
+			for (Medicament medicament : getPharma().getMedicaments())
+				for (Medicament medicament2 : nouvelAchat.getMedicaments())
+					if (medicament.getNom() == medicament2.getNom())
+						try {
+							medicament.setStock(medicament.getStock() - 1);
+						} catch (AppException e) {
+							// TODO Auto-generated catch block
+							JOptionPane.showMessageDialog(null,
+									"Plus aucun medicament n'est disponible en stock",
+									"Erreur", JOptionPane.ERROR_MESSAGE);
+						}
+			;
 			getPharma().setAchats(nouvelAchat);
 			save(getPharma(), "donnees");
 			dispose();
@@ -212,6 +225,9 @@ public class AchatDirect extends JFrame {
 		}
 		if (medicamentChoix != null) {
 			nouvelAchat.setMedicaments(medicamentChoix);
+			ArrayList<Medicament> medicamentListe = nouvelAchat
+					.getMedicaments();
+			medicamentChoix = medicamentListe.get(medicamentListe.size() - 1);
 			model.addMedicament(medicamentChoix);
 			nouvelAchat.setPrixTotal(
 					nouvelAchat.getPrixTotal() + medicamentChoix.getPrix());

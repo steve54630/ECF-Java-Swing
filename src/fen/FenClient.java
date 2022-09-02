@@ -91,6 +91,9 @@ public class FenClient extends JFrame {
 
 	/**
 	 * Constructeur de la fenetre AjouterClient
+	 * 
+	 * @param client : client de la fenetre
+	 * @param editer : booleen pour dire si l'utilisateur peut editer ou non
 	 */
 	public FenClient(Client client, boolean editer) {
 		setIconImage(Toolkit.getDefaultToolkit().getImage(

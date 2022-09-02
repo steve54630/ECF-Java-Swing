@@ -40,8 +40,9 @@ public class Ordonnance extends Achat implements Serializable {
 	 * @throws AppException : aucun medecin selectionne
 	 */
 	public void setMedecin(Medecin medecin) throws AppException {
-		if (medecin == null) throw new AppException
-		("Une ordonnance est forcement lie a un medecin");
+		if (medecin == null)
+			throw new AppException(
+					"Une ordonnance est forcement lie a un medecin");
 		this.medecin = medecin;
 	}
 
@@ -68,14 +69,12 @@ public class Ordonnance extends Achat implements Serializable {
 	 * 
 	 * @param acheteur : {@link Client} qui a achete l'ordonnance
 	 * @param medecin  : medecin traitant du client
-	 * @param pharma   : pharmacie ou est stocke l'ordonnance
-	 * @throws AppException  : erreurs de l'utilisateur
+	 * @throws AppException : erreurs de l'utilisateur
 	 */
-	public Ordonnance(Client acheteur, Medecin medecin, Pharmacie pharma) throws AppException {
+	public Ordonnance(Client acheteur, Medecin medecin) throws AppException {
 		super(acheteur);
 		this.setMedecin(medecin);
 		medecin.ajouterOrdonnance(this);
-		pharma.setOrdonnances(this);
 	}
 
 	/**
@@ -96,15 +95,19 @@ public class Ordonnance extends Achat implements Serializable {
 	 * setter pour les medicaments a ajouter
 	 * 
 	 * @param medicament : medicament a ajouter
-	 * @throws AppException : erreur dans le medicament a ajouter 
+	 * @throws AppException : erreur dans le medicament a ajouter
 	 */
 	@Override
-	public void setMedicaments(Medicament medicament)
-			throws AppException {
-		if (medicament == null) throw new AppException("Il faut ajouter "
-				+ "un medicament");
-		this.getMedicaments().add(medicament);
-		medicament.setPrix(reductionMutuelle(medicament.getPrix()));
+	public void setMedicaments(Medicament medicament) throws AppException {
+		if (medicament == null)
+			throw new AppException("Il faut ajouter " + "un medicament");
+		Medicament medicamentAchete = new Medicament(medicament.getNom(),
+				medicament.getCategorie(),
+				this.reductionMutuelle(medicament.getPrix()),
+				medicament.getStock(),
+				medicament.getDateCirculation(),
+				medicament.getPharma());
+		this.getMedicaments().add(medicamentAchete);
 	}
 
 	/**

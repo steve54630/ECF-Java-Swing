@@ -40,6 +40,7 @@ public class Medicament implements Serializable {
 	 * nombre de medicament en stock dans la pharmacie ou il est ajoute
 	 */
 	private int stock;
+	private Pharmacie pharma;
 
 	/**
 	 * setter pour le nom du medicament
@@ -110,6 +111,10 @@ public class Medicament implements Serializable {
 		return prix;
 	}
 
+	public void setDateCirculation(LocalDate dateCirculation) {
+		this.dateCirculation = dateCirculation;
+	}
+
 	/**
 	 * setter pour la date de mise en circulation
 	 * 
@@ -131,6 +136,14 @@ public class Medicament implements Serializable {
 	 */
 	public LocalDate getDateCirculation() {
 		return dateCirculation;
+	}
+
+	public Pharmacie getPharma() {
+		return pharma;
+	}
+
+	public void setPharma(Pharmacie pharma) {
+		this.pharma = pharma;
 	}
 
 	/** Methode pour recuperer une {@link LocalDate} au format "dd/MM/yyyy"
@@ -175,7 +188,7 @@ public class Medicament implements Serializable {
 	 * @param pharma    : pharmacie ou est stocke le medicament
 	 * @throws AppException : erreurs de l'utilisateur
 	 */
-	public Medicament(String nom, String categorie, int prix, int stock,
+	public Medicament(String nom, String categorie, double prix, int stock,
 			String year, String month, String day, Pharmacie pharma)
 			throws AppException {
 		this.setNom(nom);
@@ -183,7 +196,30 @@ public class Medicament implements Serializable {
 		this.setPrix(prix);
 		this.setDateCirculation(year, month, day);
 		this.setStock(stock);
-		pharma.setMedicaments(this);
+		this.setPharma(pharma);
+		getPharma().setMedicaments(this);
+	}
+	
+	/**
+	 * Constructeur pour le medicament avec la date au format LocalDate
+	 * 
+	 * @param nom       : nom du medicament
+	 * @param categorie : categorie du medicament
+	 * @param prix      : prix du medicament
+	 * @param stock     : stock du medicament
+	 * @param date : date au format {@link LocalDate}
+	 * @param pharma    : pharmacie ou est stocke le medicament
+	 * @throws AppException : erreurs de l'utilisateur
+	 */
+	public Medicament(String nom, String categorie, double prix, int stock,
+			LocalDate date, Pharmacie pharma)
+					throws AppException {
+		this.setNom(nom);
+		this.setCategorie(categorie);
+		this.setPrix(prix);
+		this.setDateCirculation(date);
+		this.setStock(stock);
+		this.setPharma(pharma);
 	}
 
 	/**

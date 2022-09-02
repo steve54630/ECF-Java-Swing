@@ -7,6 +7,8 @@ import javax.swing.border.EmptyBorder;
 import classes.Medecin;
 import classes.Ordonnance;
 
+import static main.App.*;
+
 import javax.swing.JTable;
 
 import utilitaires.OrdonnanceTableModel;
@@ -17,6 +19,13 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Toolkit;
+import javax.swing.JLabel;
+import javax.swing.JComboBox;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import javax.swing.JTextArea;
+import java.awt.Font;
+import java.awt.Color;
 
 /**
  * Fenetre de l'historique des ordonnances
@@ -45,24 +54,39 @@ public class HistoriqueOrdonnance extends JFrame {
 	/**
 	 * Constructeur de la fenetre HistoriqueOrdonnance
 	 * 
-	 * @param medecin : medecin qui a redige les ordonnances
 	 */
-	public HistoriqueOrdonnance(Medecin medecin) {
+	public HistoriqueOrdonnance() {
 		setIconImage(
 				Toolkit.getDefaultToolkit().getImage(HistoriqueOrdonnance.class
 						.getResource("/main/resources/sparadrap.jpg")));
-		setTitle("Ordonnances écrites par " + medecin.getNom() + " "
-				+ medecin.getPrenom());
+		setTitle("Ordonnances de la pharmacie");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 557, 333);
+		setBounds(100, 100, 557, 388);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
+		for (Ordonnance ordonnance : getPharma().getOrdonnances()) {
+			model.addOrdonnance(ordonnance);
+		}
+
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(57, 11, 423, 216);
+		scrollPane.setBounds(65, 57, 423, 216);
 		contentPane.add(scrollPane);
+		table.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				if (e.getClickCount() == 2)
+					try {
+						Utilitaires.afficherOrdonnance(
+								model.getOrdonnance(table.getSelectedRow()));
+					} catch (NullPointerException NPE) {
+					} catch (IndexOutOfBoundsException IOBE) {
+					}
+				;
+			}
+		});
 		scrollPane.setViewportView(table);
 
 		JButton btnRetour = new JButton("Retour");
@@ -73,7 +97,7 @@ public class HistoriqueOrdonnance extends JFrame {
 				fen.setVisible(true);
 			}
 		});
-		btnRetour.setBounds(38, 238, 111, 43);
+		btnRetour.setBounds(10, 293, 111, 43);
 		contentPane.add(btnRetour);
 
 		JButton btnQuitter = new JButton("Quitter");
@@ -82,27 +106,54 @@ public class HistoriqueOrdonnance extends JFrame {
 				dispose();
 			}
 		});
-		btnQuitter.setBounds(411, 236, 97, 47);
+		btnQuitter.setBounds(434, 291, 97, 47);
 		contentPane.add(btnQuitter);
 
-		JButton btnDetails = new JButton("Détails");
-		btnDetails.addActionListener(new ActionListener() {
+		JLabel lblNewLabel = new JLabel("Choix du medecin");
+		lblNewLabel.setBounds(70, 21, 141, 14);
+		contentPane.add(lblNewLabel);
+
+		JComboBox<Medecin> comboBox = new JComboBox<>();
+		comboBox.addItem(null);
+		for (Medecin medecinList : getPharma().getMedecins())
+			comboBox.addItem(medecinList);
+		comboBox.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				try {
-					Utilitaires.afficherOrdonnance
-					(medecin.getOrdonnancesPrescrites()
-							.get(table.getSelectedRow()));
-				} catch (NullPointerException NPE) {
-				} catch (IndexOutOfBoundsException IOBE) {
+					if (comboBox.getSelectedItem() == null) {
+						for (int i = model.getRowCount() - 1; i >= 0; i--) {
+							model.removeOrdonnance(i);
+						}
+						for (Ordonnance ordonnance : getPharma()
+								.getOrdonnances())
+							model.addOrdonnance(ordonnance);
+					}
+					if (comboBox.getSelectedItem() == getPharma().getMedecins()
+							.get(comboBox.getSelectedIndex() - 1)) {
+						for (int i = model.getRowCount() - 1; i >= 0; i--) {
+							model.removeOrdonnance(i);
+						}
+						for (Ordonnance ordonnance : getPharma()
+								.getOrdonnances())
+							if (ordonnance.getMedecin() == comboBox
+									.getSelectedItem())
+								model.addOrdonnance(ordonnance);
+					}
+				} catch (IndexOutOfBoundsException ibe) {
 				}
 			}
 		});
-		btnDetails.setBounds(237, 236, 89, 47);
-		contentPane.add(btnDetails);
-		for (Ordonnance ordonnance : medecin.getOrdonnancesPrescrites()) {
-			model.addOrdonnance(ordonnance);
-		}
+		comboBox.setBounds(221, 17, 267, 22);
+		contentPane.add(comboBox);
+		
+		JTextArea txtrCliqueFois = new JTextArea();
+		txtrCliqueFois.setEditable(false);
+		txtrCliqueFois.setBackground(new Color(240, 240, 240));
+		txtrCliqueFois.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		txtrCliqueFois.setText("Clique 2 fois sur une ordonnance\r\npour en afficher les détails");
+		txtrCliqueFois.setBounds(184, 293, 195, 43);
+		contentPane.add(txtrCliqueFois);
 
 	}
-
 }
