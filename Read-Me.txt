@@ -1,0 +1,52 @@
+Read-Me pour le premier ECF JAVA:
+
+1. Qu'est ce qui est fait?
+
+Les priorités sont toutes accomplies.
+Les tests unitaires sont realisés avec 100% de coverage sur mes classes métiers.
+
+J'ai realise les options suivantes :
+
+ * module complémentaire de recherche des mutuelles pour trier les patients par mutuelle;
+ * gestion minime des stock : voir le manuel d'utilisation pour l'explication;
+ * persistances des données : les données de mon application sont sauvegardées dans un fichier binaire "données"
+qui est lu à chaque lancement de l'application.
+
+2. Manuel d'utilisation
+
+Menu principal : ensemble des options possibles dans l'application
+
+	1. achat : menu pour les différents types d'achats possibles
+		-> ouverture d'un JOptionPane permettant le choix entre deux types d'achats:
+			* Achat sans ordonnances : après avoir selectionné le client de la pharmacie sur une JList (option à optimisé),
+			l'application ouvre une fenêtre où il est possible d'ajouter des medicaments à une Jtable. Pour le moment, si il veut ajouter
+			plusieurs medicaments il est necessaire de les ajouter un par un et le chiffre du stock ne varie pas en fonction du choix realisé
+			(le stock écrit est le stock disponible au moment de l'achat). Si il double clique sur un medicament, une fenetre lui demande de confirmer
+			la suppression du medicament et si il accepte, le medicament est supprime de la Table et de l'achat en cours de creation. Le bouton valider
+			confirme l'achat en l'enregistrant dans le fichier et en retirant du stock les medicaments achetés. Le bouton retour, quant à lui, annule l'achat en cours.
+
+			* Achat avec ordonnance : après avoir selectionné le client de la pharmacie sur une JList (option à optimisé),
+			l'application ouvre une fenêtre où plusieurs options sont possibles:
+				- choix d'un specialiste : le specialiste lie à l'ordonnance dans une comboBox rempli en fonction des specialistes du client
+				- Medecin traitant : JLabel rempli en fonction du client sélectionné
+				- mêmes options que l'achat sans ordonnance sauf que le calcul du prix du mediacament est realisé en fonction du taux de reduction de la mutuelle.
+
+
+	2.Historique des achats : menu pour voir les acahts realises dans la pharmacie
+		-> ouverture d'une fenêtre avec une JTable triable ou s'affiche tous les achats realises dans la pharmacie. il est possible de double cliquer sur un achat pour voir
+		les détails de l'achat en question
+
+
+	3.Historique des ordonnances : menu pour voir les ordonnances enregistres dans la pharmacie
+		-> ouverture d'une fenetre avec une JTable ou s'affiche seulement les ordonnances de la pharmacie. il est ensuite possible de choisir un medecin pour afficher les ordonannces
+		de celui-ci
+
+
+	4. Menu client : menu pour afficher les clients de la pharmacie, pour les editer et pour pouvoir les supprimer
+		-> Ajouter client : creer un nouveau client en fonction des conditions demandés (la fenetre ouverte aura comme parametre un client vide et toutes ses cases seront édiatables)
+		-> Supprimer un client : supprimer le client apres l'apparition d'une fenêtre de confirmation
+		-> double clique sur un client pour afficher ses détails (la fenetre ouverte aura comme parametre le client et toutes ses cases ne seront pas édiatables)
+		-> clic droit sur un client  pour pouvoir editer certaines de ses informations (la fenetre ouverte aura comme parametre le client et certaines de ses cases seront édiatables)
+		-> filtre de la table : si une option de la comboBox est sélctionné, affiche les elements de la table en fonction de l'élément sélectionné
+
+	5. Menu Stock : menu pour pouvoir gerer la quantité des medicaments present dans la pharmacie, en pouvant ajuster cette quantité;
